@@ -15,29 +15,22 @@ const Home = () => {
     const servicesData = [
         {
           id: 1,
-          title: "Service One",
-          description: "This is the description for Service One.",
-          imageUrl: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
+          title: "PERSONALISED HEALTH TRACKER",
+          description: "Track various health metrics such as weight, blood pressure, blood sugar, and exercise routines with our tool.",
+          imageUrl: "https://img.freepik.com/free-vector/online-doctor-concept_52683-37473.jpg",
         },
         {
           id: 2,
-          title: "Service Two",
-          description: "This is the description for Service Two.",
-          imageUrl: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
+          title: "MEDICATION MANAGEMENT",
+          description: "Assist users in managing medications with reminders for doses, refills, and interactions.",
+          imageUrl: "https://img.freepik.com/free-vector/online-doctor-concept_52683-37473.jpg",
         },
         {
           id: 3,
-          title: "Service Three",
-          description: "This is the description for Service Three.",
-          imageUrl: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
+          title: "ONLINE APPOINTMENTS",
+          description: "Schedule and manage appointments with doctors, specialists, and therapists, via the website or app.",
+          imageUrl: "https://img.freepik.com/free-vector/online-doctor-concept_52683-37473.jpg",
         },
-        {
-            id: 4,
-          title: "Service four",
-          description: "This is the description for Service Three.",
-          imageUrl: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg",
-
-        }
       ]; 
   return (
     <div>

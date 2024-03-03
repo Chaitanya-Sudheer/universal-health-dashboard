@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navigation = () => {
   return (
-    <div className='bg-[#0ea5e9]'>Navigation</div>
+    <div className='bg-[#4F6BFB]'>Navigation</div>
   )
 }
 

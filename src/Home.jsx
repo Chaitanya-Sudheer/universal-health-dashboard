@@ -17,7 +17,7 @@ const Home = () => {
           id: 1,
           title: "PERSONALISED HEALTH TRACKER",
           description: "Track various health metrics such as weight, blood pressure, blood sugar, and exercise routines with our tool.",
-          imageUrl: "https://img.freepik.com/free-vector/online-doctor-concept_52683-37473.jpg",
+          imageUrl: "https://img.freepik.com/free-vector/heart-rate-smartwatch-portable-pulse-tracker-wrist-clock-watch-with-touchscreen-healthcare-app-fitness-assistant-gadget-workout-vector-isolated-concept-metaphor-illustration_335657-2133.jpg?t=st=1709546776~exp=1709550376~hmac=1f9f7ea83327113308d4368b77c16105576ef2428a020e53e33c373bdd641710&w=740",
         },
         {
           id: 2,
@@ -36,6 +36,9 @@ const Home = () => {
     <div>
     <Navigation/>
     <Landing/>
+    <div className='text-white py-6 text-5xl'>
+        <p>OUR SERVICES</p>
+    </div>
     <div className="grid grid-cols-3 gap-16 py-10 ">
       {servicesData.map((service) => (
         <Service_Card

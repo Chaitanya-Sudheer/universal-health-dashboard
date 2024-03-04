@@ -9,7 +9,9 @@ const Second_page = () => {
     } 
     return (
     <div>
-    <button onClick={handleClick}>Go Home Page</button>
+         <p >This is signup page</p>
+    <button onClick={handleClick}>
+        Go Home Page</button>
     </div>
   )
 }

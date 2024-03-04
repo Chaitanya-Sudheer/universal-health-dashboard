@@ -8,7 +8,7 @@ const Second_page = () => {
       navigate('/'); // Navigates to the /home route
     } 
     return (
-    <div>Second_page
+    <div>
     <button onClick={handleClick}>Go Home Page</button>
     </div>
   )

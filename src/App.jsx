@@ -8,6 +8,7 @@ import Landing from './Landing'
 import { BrowserRouter, Route, Routes, UNSAFE_DataRouterStateContext } from 'react-router-dom'
 import Second_page from './Second_page'
 import Home from './Home'
+import Login from './Components/Login'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
       <div><BrowserRouter><Routes>
       <Route path={'/'} element={<Home/>} exact />
       <Route path={'Second_page/'} element={<Second_page/>} exact />
+      <Route path={'Login/'} element={<Login/>} exact />
       </Routes>
       </BrowserRouter>
       </div>

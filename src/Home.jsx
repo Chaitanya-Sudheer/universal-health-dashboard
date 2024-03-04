@@ -36,7 +36,7 @@ const Home = () => {
     <div>
     <Navigation/>
     <Landing/>
-    <div className="grid grid-cols-3 gap-15">
+    <div className="grid grid-cols-3 gap-16 py-10 ">
       {servicesData.map((service) => (
         <Service_Card
           key={service.id}
@@ -46,7 +46,6 @@ const Home = () => {
         />
       ))}
     </div>
-    <button onClick={handleClick}>Go Second Page</button>
     <Footer/></div>
   )
 }

@@ -3,13 +3,22 @@ import React from 'react'
 const Login = () => {
   return (
     //<div>
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-blue-200 ">
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 box-border h-100 w-100 ">
       <form className="card-body">
+      <div className="form-control">
+        <div className='text-white py-6 text-3xl text-left'>
+          <p>LOGIN</p>
+        </div>
+          <label className="label">
+              <span className="label-text">User ID</span>
+          </label>
+          <input type="text" placeholder="User ID" className="input input-bordered input-info w-full max-w-xs" required />
+      </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">User ID</span>
+            <span className="label-text">email</span>
           </label>
           <input type="email" placeholder="email" className="input input-bordered input-info w-full max-w-xs" required />
         </div>

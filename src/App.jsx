@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes, UNSAFE_DataRouterStateContext } from 'rea
 import Second_page from './Second_page'
 import Home from './Home'
 import Login from './Components/Login'
+import Dashboard from './Dashboard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
       <Route path={'/'} element={<Home/>} exact />
       <Route path={'Second_page/'} element={<Second_page/>} exact />
       <Route path={'Login/'} element={<Login/>} exact />
+      <Route path={'Dashboard/'} element={<Dashboard/>} exact />
       </Routes>
       </BrowserRouter>
       </div>

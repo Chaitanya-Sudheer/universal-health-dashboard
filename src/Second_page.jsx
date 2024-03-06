@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import Navigation from './Navigation';
 
 const Second_page = () => {
     let navigate = useNavigate();
@@ -9,7 +10,8 @@ const Second_page = () => {
     } 
     return (
     <div>
-         <p >This is signup page</p>
+     <Navigation/>
+      <p >This is signup page</p>
     <button onClick={handleClick}>
         Go Home Page</button>
     </div>

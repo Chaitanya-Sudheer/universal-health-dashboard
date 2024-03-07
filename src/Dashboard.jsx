@@ -1,8 +1,11 @@
 import React from 'react'
-
+import Container from './Components/Container'
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div className='flex items-center justify-centert'>
+      
+      <Container/>
+    </div>
   )
 }
 

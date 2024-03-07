@@ -5,7 +5,26 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      flexBasis: {
+        20: '20%',
+        80: '80%'
+      },
+      height: {
+        '90': '90%'
+      },
+      colors: {
+        SidemenuBg: '#2D41A7',
+        bodybg: '#ffff',
+        titlecolor: '#2b2b2b',
+        hovercolor: '#CFDCEC',
+        textColor: '#FFFFFF',
+        colorone: '#f6eff4',
+        colortwo: '#fbf0ef',
+        colorthree: '#f1fcf0',
+        colorfour: '#fcf8ef',
+        gradient: 'linear-gradient(rgb(56,194,166),rgb(124,83,151))'
+      }},
   },
   plugins: [require("daisyui")],
 }

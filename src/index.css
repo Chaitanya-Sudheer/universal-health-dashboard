@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root{
+    font-family: "Montserrat", sans-serif;
+  }
+  li{
+    opacity: .3;
+    cursor: pointer;
+  }
+  body{
+    background: #ece3e9;
+  }
+  .singleUnimed:hover img{
+    transform: scale(1.1);
+    transition: all .8s ease-in-out;
+  }
+  
+  ::-webkit-scrollbar{
+    display: none;
+  }

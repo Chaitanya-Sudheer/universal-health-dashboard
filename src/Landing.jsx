@@ -5,7 +5,7 @@ const Landing = () => {
     let navigate = useNavigate();
 
     function handleClick() {
-      navigate('/Second_page');
+      navigate('/Sign_In');
     }
   return (
     //<div className="bg-gradient-to-r from-cyan-500 to-blue-500">

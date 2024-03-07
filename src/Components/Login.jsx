@@ -39,7 +39,7 @@ const Login = () =>
           </label>
           <input type="password" placeholder="password" className="input input-bordered input-info w-full max-w-xs" required />
           <label className="label">
-            <a href="http://localhost:5173/Second_page" className="label-text-alt link link-hover text-white">Don't have an account?Sign up</a>
+            <a href="http://localhost:5173/Sign_In" className="label-text-alt link link-hover text-white">Don't have an account?Sign up</a>
           </label>
         </div>
         <div className=" form-control mt-6">

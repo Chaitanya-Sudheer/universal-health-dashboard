@@ -10,7 +10,7 @@ const Home = () => {
     let navigate = useNavigate();
 
     function handleClick() {
-      navigate('/Second_page'); // Navigates to the /home route
+      navigate('/Sign_In'); // Navigates to the /home route
     } 
     const servicesData = [
         {

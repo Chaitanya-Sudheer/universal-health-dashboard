@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 
-const Second_page = () => {
+const Sign_In = () => {
     let navigate = useNavigate();
 
     function handleClick() {
@@ -18,4 +18,4 @@ const Second_page = () => {
   )
 }
 
-export default Second_page
+export default Sign_In

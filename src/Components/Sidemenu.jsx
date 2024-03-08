@@ -10,7 +10,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 const Sidemenu = () => {
   return (
-    <div className='Sidemenu p-10 bg-gradient-to-r from-[#273A96] to-blue-500  text-white'>
+    <div className='Sidemenu p-10 bg-black text-white'>
     <div className='logo mt-4 gap-2 text-[white] flex items-center justify-center m-auto'>
         <FiActivity className='text-[20px]'/>
         <h1 className='text-[20px] align-center justify-center font-black '>UNIMED</h1>

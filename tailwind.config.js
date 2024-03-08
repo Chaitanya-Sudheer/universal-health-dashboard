@@ -22,6 +22,8 @@ export default {
         colorfour: "#fcf8ef",
         gradient: "linear-gradient(rgb(56,194,166),rgb(124,83,151))",
       },
+
+      
     },
   },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],

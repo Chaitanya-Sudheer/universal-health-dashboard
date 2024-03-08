@@ -65,6 +65,11 @@ const Home = () => {
     <div>
       <Navigation />
       <Landing />
+      <div className="bg-gradient-to-r from-[#AECCFE] from-3% via-white via-45% to-blue-100 to-96%">
+        <div className="text-black py-12 text-4xl">
+          <p>    </p>
+        </div>
+      </div>
       <div className="bg-white">
         <div className="text-black pt-6 text-4xl">
           <p>OUR SERVICES</p>

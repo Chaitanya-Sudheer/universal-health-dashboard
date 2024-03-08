@@ -43,7 +43,7 @@ const Login = () =>
           </label>
         </div>
         <div className=" form-control mt-6">
-          <button onClick={handleClick1} className="btn text-white bg-blue-400 border-blue-400  hover:border-blue-500 hover:bg-blue-500">LOGIN</button>
+          <button onClick={handleClick1} className="btn text-white bg-blue-400 border-blue-400  hover:border-blue-500 hover:bg-blue-500 ">LOGIN</button>
         </div>
       </form>
     </div>

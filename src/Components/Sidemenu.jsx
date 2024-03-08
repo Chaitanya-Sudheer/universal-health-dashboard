@@ -10,10 +10,10 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 const Sidemenu = () => {
   return (
-    <div className='Sidemenu p-10 bg-white text-black rounded-md'>
+    <div className='Sidemenu p-10 bg-gradient-to-r from-[#AECCFE] from-3% via-white via-45% to-blue-100 to-96% text-black rounded-md'>
     <div className='logo mt-4 gap-2 text-[black] flex items-center justify-center m-auto'>
-        <FiActivity className='text-[20px]'/>
-        <h1 className='text-[20px] align-center justify-center font-black '>UNIMED</h1>
+        <FiActivity className='text-[30px]'/>
+        <h1 className='text-[40px] align-center justify-center font-black '>UNIMED</h1>
         </div>
         <div className='flex items-center justify-center text-[black] flex-col mt-[3rem] admin'>
         <img src="https://static.vecteezy.com/system/resources/previews/029/271/069/original/avatar-profile-icon-in-flat-style-female-user-profile-illustration-on-isolated-background-women-profile-sign-business-concept-vector.jpg" className="h-[100px] w-[100px] border-white-200 border-[4px] object-cover rounded-full" alt="Profile Avatar" />
@@ -38,15 +38,15 @@ const Sidemenu = () => {
         <FaFilePrescription className='text-black'/>
         <span className='text-black'>Prescription</span>
         </li>
-        <li className='flex pt-3 pb-3 pl-3 gap-2 hover:opacit-100 items-center'>
+        <li className='flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center'>
         <RiMedicineBottleLine className='text-black'/>
         <span className='text-black'>Medicines</span>
         </li>
-        <li className='flex pt-3 pb-3 pl-3 gap-2 hover:opacit-100 items-center'>
+        <li className='flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center'>
         <FaRegCalendarAlt className='text-black'/>
         <span className='text-black'>Appointments</span>
         </li>
-        <li className='flex pt-3 pb-3 pl-3 gap-2 hover:opacit-100 items-center'>
+        <li className='flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center'>
         <CiLogout className='text-black'/>
         <span className='text-black'>Logout</span>
         </li>

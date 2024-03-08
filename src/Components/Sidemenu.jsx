@@ -16,7 +16,7 @@ const Sidemenu = () => {
         <h1 className='text-[40px] align-center justify-center font-black '>UNIMED</h1>
         </div>
         <div className='flex items-center justify-center text-[black] flex-col mt-[3rem] admin'>
-        <img src="https://static.vecteezy.com/system/resources/previews/029/271/069/original/avatar-profile-icon-in-flat-style-female-user-profile-illustration-on-isolated-background-women-profile-sign-business-concept-vector.jpg" className="h-[100px] w-[100px] border-white-200 border-[4px] object-cover rounded-full" alt="Profile Avatar" />
+        <img src="https://static.vecteezy.com/system/resources/previews/029/271/069/original/avatar-profile-icon-in-flat-style-female-user-profile-illustration-on-isolated-background-women-profile-sign-business-concept-vector.jpg" className="h-[100px] w-[100px] border-black-200 border-[4px] object-cover rounded-full" alt="Profile Avatar" />
     <span className='opacity-100 mt-2 text-black-400'>User</span>
     <h3 className='font-bold text-textColor'>User</h3>
     </div>

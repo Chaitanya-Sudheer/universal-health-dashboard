@@ -12,8 +12,12 @@ const Sign_In = () => {
  const [userType, setUserType] = useState('patient'); // Default to 'patient'
 
  function handleClick1() {
-    navigate('/Login'); // Navigates to the /home route
+    navigate('/Login'); // Navigates to login
  }
+
+ function handleClick2() {
+  navigate('/Dashboard'); // Navigates to the /home route
+}
 
  const handleSubmit = async (event) => {
     event.preventDefault();
@@ -110,7 +114,7 @@ const Sign_In = () => {
               </div>
 
               <div className="form-control mt-6">
-                <button type="submit" className="btn text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500">SIGN UP</button>
+                <button onClick={handleClick2} type="submit" className="btn text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500">SIGN UP</button>
               </div>
             </form>
           </div>

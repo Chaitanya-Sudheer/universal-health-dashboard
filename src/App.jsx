@@ -10,6 +10,7 @@ import Sign_In from './Sign_In'
 import Home from './Home'
 import Login from './Components/Login'
 import Dashboard from './Dashboard'
+import About from './About'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
       <Route path={'Sign_In/'} element={<Sign_In/>} exact />
       <Route path={'Login/'} element={<Login/>} exact />
       <Route path={'Dashboard/'} element={<Dashboard/>} exact />
+      <Route path={'AboutUs/'} element={<About/>} exact />
       </Routes>
       </BrowserRouter>
       </div>

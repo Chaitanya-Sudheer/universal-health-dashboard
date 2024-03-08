@@ -9,6 +9,9 @@ const Login = () =>
     function handleClick1() {
       navigate('/Dashboard');
     }
+    function handleClick2() {
+      navigate('/Sign_In');
+    }
   return (
   
   <div>
@@ -33,9 +36,9 @@ const Login = () =>
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password " placeholder="password " className="input input-bordered input-info w-full max-w-xs " required />
+          <input type="password " placeholder="password " className="input bg-white input-bordered input-info w-full max-w-xs " required />
           <label className="label">
-            <a href="http://localhost:5173/Sign_In" className="label-text-alt link link-hover text-black">Don't have an account?Sign up</a>
+            <a onClick={handleClick2} className="label-text-alt link link-hover text-black">Don't have an account?Sign up</a>
           </label>
         </div>
         <div className=" form-control mt-6">

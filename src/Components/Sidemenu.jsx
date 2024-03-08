@@ -48,7 +48,7 @@ const Sidemenu = () => {
         </li>
         <li className='flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center'>
         <CiLogout className='text-black'/>
-        <span className='text-black'>Logout</span>
+        <span  className='text-black'>Logout</span>
         </li>
     </div>
 

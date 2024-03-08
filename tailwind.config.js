@@ -12,8 +12,8 @@ export default {
       },
       colors: {
         SidemenuBg: "#2D41A7",
-        bodybg: "#ffff",
-        titlecolor: "#2b2b2b",
+        bodybg: "#FFFFFF",
+        titlecolor: "#000000",
         hovercolor: "#CFDCEC",
         textColor: "#FFFFFF",
         colorone: "#f6eff4",

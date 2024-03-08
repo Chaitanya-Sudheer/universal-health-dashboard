@@ -1,29 +1,19 @@
 import React from "react";
-import { CiSearch } from "react-icons/ci";
+
 
 const Body = () => {
   return (
-    <div className="bg-bodyBg h-[100%] basis-80 p-8 flex-grow">
-      <div className="flex items-center justify-center">
-        <div className="flex items-rtl border-b-2 pb-2 basis-1/2 gap-2 justify-content-end">
-          <label className="input input-bordered flex items-center gap-2">
-            <input type="text" className="grow" placeholder="Search here" />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              className="w-4 h-4 opacity-70"
-            >
-              <path
-                fillRule="evenodd"
-                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </label>
-        </div>
-      </div>
+    <div class="hero min-h-screen w-screen" style={{backgroundImage: 'url(https://i.pinimg.com/564x/90/f8/e9/90f8e9cf9690a57ea3986552e3fb5ed9.jpg)',backgroundSize: 'cover', backgroundPosition: 'center',}}>
+      <div className="hero-overlay bg-white-opacity-10"></div>
+      
+  <div class="hero-content text-center text-neutral-content">
+    <div class="max-w">
+     {/*} <h1 class="text-5xl font-bold">Hello there</h1>
+      <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+  <button class="btn btn-primary">Get Started</button>*/}
     </div>
+  </div>
+</div>
   );
 };
 

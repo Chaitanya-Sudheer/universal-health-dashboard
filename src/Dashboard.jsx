@@ -10,6 +10,7 @@ const Dashboard = () => {
       <div className="flex flex-col md:flex-row">
         <Sidemenu />
         <Body />
+        
       </div>
     </div>
     </div>

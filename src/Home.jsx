@@ -26,7 +26,7 @@ const Home = () => {
       description:
         "Assist users in managing medications with reminders for doses, refills, and interactions.",
       imageUrl:
-        "https://img.freepik.com/free-vector/online-doctor-concept_52683-37473.jpg",
+        "https://img.freepik.com/free-vector/tiny-people-doctor-prescribing-medicine-patients-online-online-prescription-system-prescription-management-system-online-pharmacy-concept-pinkish-coral-bluevector-vector-isolated-illustration_335657-1601.jpg?size=626&ext=jpg&ga=GA1.1.57018559.1707586521",
     },
     {
       id: 3,
@@ -34,15 +34,31 @@ const Home = () => {
       description:
         "Schedule and manage appointments with doctors, specialists, and therapists, via the website or app.",
       imageUrl:
-        "https://img.freepik.com/free-vector/online-doctor-concept_52683-37473.jpg",
+        "https://img.freepik.com/premium-vector/online-doctor-work-illustration-concept-with-characters_269730-103.jpg?size=626&ext=jpg&uid=R137497200&ga=GA1.1.57018559.1707586521",
     },
     {
-      id: 3,
-      title: "ONLINE APPOINTMENTS",
+      id: 4,
+      title: "ON TIME MEDICINE DELIVERY",
       description:
-        "Schedule and manage appointments with doctors, specialists, and therapists, via the website or app.",
+        "Integration with pharmacy services to facilitate the delivery of prescribed medications to the user's doorstep.",
       imageUrl:
-        "https://img.freepik.com/free-vector/online-doctor-concept_52683-37473.jpg",
+        "https://img.freepik.com/premium-vector/male-doctor-uniform-riding-scooter-with-medical-surgical_132971-273.jpg?w=996",
+    },
+    {
+      id: 5,
+      title: "INSURANCE INTEGRATION",
+      description:
+        "Integrates with insurance systems to provide a transparent view of coverage, claims, and billing information.",
+      imageUrl:
+        "https://img.freepik.com/free-vector/private-property-transport-life-protection_335657-3144.jpg?t=st=1709902610~exp=1709906210~hmac=5040ab15e950972339875ca24c715ae12b049cb8a68cd35605db5d8c8b6cf2ff&w=996",
+    },
+    {
+      id: 6,
+      title: "INSURANCE INTEGRATION",
+      description:
+        "Integrates with insurance systems to provide a transparent view of coverage, claims, and billing information.",
+      imageUrl:
+        "https://img.freepik.com/free-vector/private-property-transport-life-protection_335657-3144.jpg?t=st=1709902610~exp=1709906210~hmac=5040ab15e950972339875ca24c715ae12b049cb8a68cd35605db5d8c8b6cf2ff&w=996",
     },
   ];
   return (
@@ -50,12 +66,12 @@ const Home = () => {
       <Navigation />
       <Landing />
       <div className="bg-white">
-        <div className="text-black py-6 text-4xl">
+        <div className="text-black pt-6 text-4xl">
           <p>OUR SERVICES</p>
         </div>
       </div>
-      <div className="hero  bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 py-10 px-7">
+      <div className="hero ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 pt-6 pb-6 px-7">
           {servicesData.map((service) => (
             <Service_Card
               key={service.id}

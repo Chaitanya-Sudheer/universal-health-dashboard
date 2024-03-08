@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Navigation from '../Navigation';
+import { Footer } from '../Footer';
 
 const Login = () => 
   {
@@ -16,10 +17,10 @@ const Login = () =>
   
   <div>
      <Navigation/>
-  <div className="hero h-90 bg-blue-200 "
+  <div className="hero h-full bg-blue-200 "
   style={{backgroundImage: 'url(https://i.pinimg.com/564x/a7/bf/8e/a7bf8e534918be24fea8fbeeb8552aa9.jpg)'}}>
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-white-100 bg-opacity-10 backdrop-blur-lg  p-4">
+    <div className="card shrink-0 w-full mt-16 max-w-sm shadow-2xl  shadow-blue-200 bg-white-100 bg-opacity-10 backdrop-blur-lg border border-blue-400 border-b-4 border-r-4  p-4">
       <form className="card-body">
       <div className="form-control">
         <div className='text-black py-6 text-3xl text-left'>
@@ -28,9 +29,9 @@ const Login = () =>
       </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">email</span>
+            <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered input-info w-full max-w-xs" required />
+          <input type="Email" placeholder="Email" className="input bg-white input-bordered input-info w-full max-w-xs" required />
         </div>
         <div className="form-control">
           <label className="label">
@@ -48,7 +49,14 @@ const Login = () =>
     </div>
   </div>
 </div>
+<div className="bg-gradient-to-r from-[#C9DEFD] from-3% via-white via-45% to-[#E4F2FF] to-96%">
+        <div className="text-black py-12 text-4xl">
+          <p>    </p>
+        </div>
+      </div>
+<Footer />
 </div>
+
   )
 }
 //border border-blue-900

@@ -11,6 +11,12 @@ import Home from './Home'
 import Login from './Components/Login'
 import Dashboard from './Dashboard'
 import About from './About'
+import Overview from './Components/Overview'
+import Profile from './Components/Profile'
+import Prescription from './Components/Prescription'
+import Records from './Components/Records'
+import Medicines from './Components/Medicines'
+import Appointments from './Components/Appointments'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +29,12 @@ function App() {
       <Route path={'Login/'} element={<Login/>} exact />
       <Route path={'Dashboard/'} element={<Dashboard/>} exact />
       <Route path={'AboutUs/'} element={<About/>} exact />
+      <Route path={'Overview/'} element={<Overview/>} exact />
+      <Route path={'Profile/'} element={<Profile/>} exact />
+      <Route path={'Prescription/'} element={<Prescription/>} exact />
+      <Route path={'Records/'} element={<Records/>} exact />
+      <Route path={'Medicines/'} element={<Medicines/>} exact />
+      <Route path={'Appointments/'} element={<Appointments/>} exact />
       </Routes>
       </BrowserRouter>
       </div>

@@ -54,11 +54,11 @@ const Home = () => {
     },
     {
       id: 6,
-      title: "INSURANCE INTEGRATION",
+      title: "HEALTH RECORDS AND HISTORY",
       description:
-        "Integrates with insurance systems to provide a transparent view of coverage, claims, and billing information.",
+        "Manage patient health records for accurate and updated medical history overview, aiding healthcare professionals.",
       imageUrl:
-        "https://img.freepik.com/free-vector/private-property-transport-life-protection_335657-3144.jpg?t=st=1709902610~exp=1709906210~hmac=5040ab15e950972339875ca24c715ae12b049cb8a68cd35605db5d8c8b6cf2ff&w=996",
+        "https://img.freepik.com/free-vector/health-insurance-abstract-concept-vector-illustration-health-insurance-contract-medical-expenses-claim-application-form-agent-consultation-sign-document-emergency-coverage-abstract-metaphor_335657-1356.jpg?t=st=1709921498~exp=1709925098~hmac=e506ecec13b80afeb920a5a1443b5a0ee8f30ec36f8b19a836ce1e4ea8e2c83f&w=740",
     },
   ];
   return (

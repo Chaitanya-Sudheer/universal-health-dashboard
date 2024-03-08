@@ -8,7 +8,17 @@ import { FaFilePrescription } from "react-icons/fa";
 import { RiMedicineBottleLine } from "react-icons/ri";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
+import { useNavigate } from 'react-router-dom'
+
+
 const Sidemenu = () => {
+    let navigate = useNavigate();
+
+    function handleClick1() {
+        navigate('/');
+      }
+      
+
   return (
     <div className='Sidemenu p-10 bg-gradient-to-r from-[#AECCFE] from-3% via-white via-45% to-blue-100 to-96% text-black rounded-md'>
     <div className='logo mt-4 gap-2 text-[black] flex items-center justify-center m-auto'>
@@ -46,7 +56,7 @@ const Sidemenu = () => {
         <FaRegCalendarAlt className='text-black'/>
         <span className='text-black'>Appointments</span>
         </li>
-        <li className='flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center'>
+        <li className='flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center' onClick={handleClick1} >
         <CiLogout className='text-black'/>
         <span  className='text-black'>Logout</span>
         </li>

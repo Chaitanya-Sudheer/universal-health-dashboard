@@ -1,15 +1,16 @@
-import React from 'react'
-import Body from './Body'
-import Sidemenu from './Sidemenu'
+import React from "react";
+import Body from "./Body";
+import Sidemenu from "./Sidemenu";
 
 const Container = () => {
   return (
-    
-    <div className='flex m-auto h-[120vh] items-center justify-center w-[120vw] my-9 rounded-xl overflow-hidden'>
-        <Sidemenu/>
-        <Body/>
+    <div className="flex flex-col md:flex-row justify-center items-center h-screen w-full">
+      <div className="flex flex-col md:flex-row gap-4">
+        <Sidemenu />
+        <Body />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;

@@ -47,7 +47,7 @@ const Sidemenu = () => {
 
   return (
     <div className='Sidemenu p-10 bg-gradient-to-r from-[#AECCFE] from-3% via-white via-45% to-blue-100 to-96% text-black rounded-md'>
-    <div className='logo mt-4 gap-2 text-[black] flex items-center justify-center m-auto'>
+    <div className='logo mt-0 p-0 gap-2 text-[black] flex items-center justify-center m-auto'>
         <FiActivity className='text-[30px]'/>
         <h1 className='text-[40px] align-center justify-center font-black '>UNIMED</h1>
         </div>

@@ -17,6 +17,7 @@ import Prescription from './Components/Prescription'
 import Records from './Components/Records'
 import Medicines from './Components/Medicines'
 import Appointments from './Components/Appointments'
+import Treatment_history from './Components/Treatment_history'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +36,7 @@ function App() {
       <Route path={'Records/'} element={<Records/>} exact />
       <Route path={'Medicines/'} element={<Medicines/>} exact />
       <Route path={'Appointments/'} element={<Appointments/>} exact />
+      <Route path={'Treatment_history/'} element={<Treatment_history/>} exact />
       </Routes>
       </BrowserRouter>
       </div>

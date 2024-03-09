@@ -15,8 +15,9 @@ const Dnav = () => {
 
   return (
     <div className="navbar fixed left-0 top-0 bg-base-100 bg-opacity-0">
+      
   <div className="flex-1">
-    <a className="btn btn-ghost text-3xl text-black ml-80 ">DASHBOARD</a>
+    <a className="btn btn-ghost text-3xl text-black ml-80 ">Dashboard</a>
   </div>
   <div className="flex-none gap-2">
     <div className="form-control">
@@ -39,6 +40,7 @@ const Dnav = () => {
           <a  onClick={handleClick1} className="label-text-alt link link-hover text-white"> Logout</a>
         </li>
       </ul>
+      
     </div>
   </div>
 </div>

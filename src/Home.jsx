@@ -42,7 +42,7 @@ const Home = () => {
       description:
         "Integration with pharmacy services to facilitate the delivery of prescribed medications to the user's doorstep.",
       imageUrl:
-        "https://img.freepik.com/premium-vector/male-doctor-uniform-riding-scooter-with-medical-surgical_132971-273.jpg?w=996",
+        "https://img.freepik.com/free-vector/team-volunteers-giving-help-boxes-refuges-humanitarian-aid-van-humanitarian-aid-material-assistance-governmental-help-concept-pinkish-coral-bluevector-isolated-illustration_335657-1388.jpg?t=st=1709924849~exp=1709928449~hmac=7d203d75d5aa86b5a2a55c85c5f3af52310df39d4127b44ea0756c6bcfdd9dbd&w=996",
     },
     {
       id: 5,

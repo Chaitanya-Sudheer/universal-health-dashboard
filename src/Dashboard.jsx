@@ -2,6 +2,7 @@ import React from 'react'
 import Container from './Components/Container'
 import Sidemenu from './Components/Sidemenu'
 import Body from './Components/Body'
+import { Dashnav } from './Components/Dashnav'
 
 const Dashboard = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import image1 from './assets/gradient.jpg'
+import image1 from './assets/doc.png'
 
 const Landing = () => {
     let navigate = useNavigate();

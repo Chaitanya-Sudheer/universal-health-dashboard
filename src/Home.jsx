@@ -2,15 +2,10 @@ import React from "react";
 import Navigation from "./Navigation";
 import { Footer } from "./Footer";
 import Landing from "./Landing";
-import { useNavigate } from "react-router-dom";
 import Service_Card from "./Components/Service_Card";
 
 const Home = () => {
-  let navigate = useNavigate();
-
-  function handleClick() {
-    navigate("/Sign_In"); // Navigates to the /home route
-  }
+  
   const servicesData = [
     {
       id: 1,

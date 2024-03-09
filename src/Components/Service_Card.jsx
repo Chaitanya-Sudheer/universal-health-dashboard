@@ -2,7 +2,7 @@ import React from 'react'
 
 const Service_Card = ({ title, description, imageUrl }) => {
   return (
-    <div className="card w-100 h-50 bg-white  py-2 border border-blue-500 border-b-4 border-r-4 p-0">
+    <div className="card w-100 h-50 bg-white py-2 border border-blue-500 border-b-4 border-r-4 p-0">
     <div className="card-body w-80 h-30">
       <h2 className="card-title text-black text-left py-2 text-l">{title}</h2>
       <p class="text-left text-black text-md">{description}</p>

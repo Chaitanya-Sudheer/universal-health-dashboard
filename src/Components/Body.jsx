@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Body = () => {
   return (
     <div class="hero min-h-screen w-screen bg-white">

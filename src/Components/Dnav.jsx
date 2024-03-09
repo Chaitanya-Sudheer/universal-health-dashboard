@@ -2,7 +2,7 @@ import React from 'react'
 
 const Dnav = () => {
   return (
-    <div className="navbar fixed left-0 top-0 bg-base-100 bg-opacity-10">
+    <div className="navbar fixed left-0 top-0 bg-base-100 bg-opacity-0">
   <div className="flex-1">
     <a className="btn btn-ghost text-xl text-black ml-80 ">DASHBOARD</a>
   </div>

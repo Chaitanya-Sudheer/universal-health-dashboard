@@ -18,6 +18,7 @@ const Profile = () => {
       <div className="m-auto grid justify-left mt-4 relative">
         <h1 className="text-[27px] absolute top-20 left-12 ml-2 text-black">Profile</h1>
         <div className="m-auto grid justify-center mt-4">
+        <div className="max-h-screen overflow-y-auto">
           <ul className="flex flexcol gap-4">
             <li>
               <label className="form-control w-full max-w-xs pt-28 pb-10 pl-10 gap-1 ml-2.5">
@@ -82,7 +83,7 @@ const Profile = () => {
             <li>
             <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-6 gap-1 ml-[640px] relative top-[-127px]">
                 <div className="label">
-                  <span className="label-text text-gray">City</span>
+                  <span className="label-text text-black">City</span>
                 </div>
                 <div className="inline-block relative w-64">
                   <select className="input input-bordered input-info bg-white border-2  w-full max-w-xs">
@@ -108,7 +109,7 @@ const Profile = () => {
             <li>
             <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-126px]">
                 <div className="label">
-                  <span className="label-text text-gray">State</span>
+                  <span className="label-text text-black">State</span>
                 </div>
                 <div className="inline-block relative w-64">
                   <select className="input input-bordered input-info bg-white border-2 w-full max-w-xs">
@@ -186,7 +187,7 @@ const Profile = () => {
       <li>
       <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-640px]">
                 <div className="label">
-                  <span className="label-text text-gray">Language Preference</span>
+                  <span className="label-text text-black">Language Preference</span>
                 </div>
                 <div className="inline-block relative w-64">
                   <select className="input input-bordered input-info bg-white border-2 w-full max-w-xs">
@@ -213,6 +214,7 @@ const Profile = () => {
       <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500 relative top-[-600px] ml-2">Submit</button>
       
           </ul>
+        </div>
         </div>
         <Dnav />
       </div>

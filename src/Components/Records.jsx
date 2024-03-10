@@ -20,30 +20,35 @@ const Records = () => {
       id: 2,
       title: "MEDICAL DIRECTIVES",
       //description: " ",
+      onClick: () => navigate('/Medical_directives'),
     },
 
     {
       id: 3,
       title: "VACCINATION HISTORY",
       //description: "  ",
+      onClick: () => navigate('/Vaccination_history'),
     },
 
     {
       id: 4,
       title: "ALLERGIES",
-      //description: "  ",
+      //description: "  ",  
+      onClick: () => navigate('/Allergies'),
     },
 
     {
       id: 5,
       title: "FAMILY MEDICAL HISTORY",
       //description: "  ",
+      onClick: () => navigate('/Fam_Med_History'),
     },
 
     {
       id: 6,
       title: "SOCIAL HISTORY",
       //description: " ",
+      onClick: () => navigate('/Social_History'),
     },
 
     {

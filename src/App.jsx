@@ -18,6 +18,11 @@ import Records from './Components/Records'
 import Medicines from './Components/Medicines'
 import Appointments from './Components/Appointments'
 import Treatment_history from './Components/Treatment_history'
+import Medical_directives from './Components/Medical_directives'
+import Vaccination_history from './Components/Vaccination_history'
+import Allergies from './Components/Allergies'
+import Fam_Med_History from './Components/Fam_Med_History'
+import Social_history from './Components/Social_history'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,6 +42,11 @@ function App() {
       <Route path={'Medicines/'} element={<Medicines/>} exact />
       <Route path={'Appointments/'} element={<Appointments/>} exact />
       <Route path={'Treatment_history/'} element={<Treatment_history/>} exact />
+      <Route path={'Medical_directives/'} element={<Medical_directives/>} exact />
+      <Route path={'Vaccination_history/'} element={<Vaccination_history/>} exact />
+      <Route path={'Allergies/'} element={<Allergies/>} exact />
+      <Route path={'Fam_Med_History/'} element={<Fam_Med_History/>} exact />
+      <Route path={'Social_history/'} element={<Social_history/>} exact />
       </Routes>
       </BrowserRouter>
       </div>

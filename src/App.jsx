@@ -11,6 +11,7 @@ import Home from './Home'
 import Login from './Components/Login'
 import Dashboard from './Dashboard'
 import About from './About'
+import Contact from './Contact'
 import Overview from './Components/Overview'
 import Profile from './Components/Profile'
 import Prescription from './Components/Prescription'
@@ -35,6 +36,7 @@ function App() {
       <Route path={'Login/'} element={<Login/>} exact />
       <Route path={'Dashboard/'} element={<Dashboard/>} exact />
       <Route path={'AboutUs/'} element={<About/>} exact />
+      <Route path={'Contact/'} element={<Contact/>} exact />
       <Route path={'Overview/'} element={<Overview/>} exact />
       <Route path={'Profile/'} element={<Profile/>} exact />
       <Route path={'Prescription/'} element={<Prescription/>} exact />

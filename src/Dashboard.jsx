@@ -1,7 +1,7 @@
 import React from 'react'
 import Sidemenu from './Components/Sidemenu'
 import Body from './Components/Body'
-
+import Dnav from './Components/Dnav'
 const Dashboard = () => {
   return (
     <div className=''>

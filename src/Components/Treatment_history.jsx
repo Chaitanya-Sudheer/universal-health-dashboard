@@ -1,71 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Dnav from "./Dnav";
 import Sidemenu from "./Sidemenu";
 
-// Define the data structure for the treatment history
-const treatmentHistoryData = [
-  {
-    id: 1,
-    treatmentType: "Clinical Visit",
-    reason: "Checkup and general health assessment",
-    doctor: "Dr. John Doe",
-    hospital: "City Hospital",
-    medications: "Paracetamol, Vitamin C",
-    procedure: "Physical Examination",
-    date: "30-06-2016",
-    complications: "No",
-    outcome: "Normal",
-  },
-  {
-    id: 2,
-    treatmentType: "Surgery",
-    reason: "Appendectomy",
-    doctor: "Dr. Jane Smith",
-    hospital: "Community Hospital",
-    medications: "Morphine, Antibiotics",
-    procedure: "Appendectomy",
-    date: "03-10-2016",
-    complications: "Yes, infection",
-    outcome: "Successful",
-  },
-  {
-    id: 3,
-    treatmentType: "Therapy Session",
-    reason: "Physical Therapy for Back Pain",
-    doctor: "Dr. Michael Brown",
-    hospital: "Wellness Clinic",
-    medications: "None",
-    procedure: "Physical Therapy",
-    date: "04-02-2018",
-    complications: "No",
-    outcome: "Improved",
-  },
-  {
-    id: 4,
-    treatmentType: "Emergency Room Visit",
-    reason: "Chest Pain",
-    doctor: "Dr. Sarah Lee",
-    hospital: "City Hospital",
-    medications: "Aspirin, Nitroglycerin",
-    procedure: "Cardiac Examination",
-    date: "15-03-2021",
-    complications: "Yes, heart attack",
-    outcome: "Stable",
-  },
-  {
-    id: 5,
-    treatmentType: "Consultation",
-    reason: "Allergy Testing",
-    doctor: "Dr. Alex Johnson",
-    hospital: "Allergy Clinic",
-    medications: "Antihistamines",
-    procedure: "Allergy Testing",
-    date: "05-01-2022",
-    complications: "No",
-    outcome: "Diagnosed with pollen allergy",
-  },
-];
 const Treatment_history = () => {
+  const [treatmentHistoryData, setTreatmentHistoryData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const apiUrl = `${import.meta.env.VITE_BACKEND}/GetTreatmentHistoryByPatientID/11`;
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        if (data && Array.isArray(data.treatmentHistory)) {
+          setTreatmentHistoryData(data.treatmentHistory);
+        } else {
+          console.error("Expected treatmentHistory to be an array, but received:", data);
+        }
+      } catch (error) {
+        console.error("There was a problem with your fetch operation: ", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
       <div className="flex flex-col md:flex-row">
@@ -80,7 +41,7 @@ const Treatment_history = () => {
             <table className="table table-xs">
               <thead>
                 <tr>
-                  <th className="text-black pt-2"></th>
+                  <th className="text-black pt-2">Treatment ID</th>
                   <th className="text-black">Treatment Type</th>
                   <th className="text-black">Reason</th>
                   <th className="text-black">Doctor</th>
@@ -93,10 +54,10 @@ const Treatment_history = () => {
                 </tr>
               </thead>
               <tbody>
-                {treatmentHistoryData.map((item, index) => (
+                {Array.isArray(treatmentHistoryData) && treatmentHistoryData.map((item, index) => (
                   <tr key={index} className="text-black">
-                    <th>{item.id}</th>
-                    <td>{item.treatmentType}</td>
+                    <th>{item.treatment_id}</th>
+                    <td>{item.treatmenttype}</td>
                     <td>{item.reason}</td>
                     <td>{item.doctor}</td>
                     <td>{item.hospital}</td>

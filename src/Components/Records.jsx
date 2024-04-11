@@ -39,7 +39,23 @@ const Records = () => {
       title: "SOCIAL HISTORY",
       onClick: () => navigate("/dashboard/social_history"),
     },
-    // Add more records as needed
+    {
+      id: 7,
+      title: "REVIEW OF SYSTEMS",
+      //description: "  ",
+    },
+
+    {
+      id: 8,
+      title: "PHYSICAL EXAMINATIONS",
+      //description: " ",
+    },
+
+    {
+      id: 8,
+      title: "OTHERS",
+      //description: " ",
+    },
   ];
 
   return (

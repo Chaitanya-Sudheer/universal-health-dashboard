@@ -13,6 +13,11 @@ import { useNavigate } from "react-router-dom";
 const Sidemenu = () => {
   let navigate = useNavigate();
 
+  function handleLogout() {
+    localStorage.removeItem("authToken");
+    navigate("/login");
+  }
+
   function handleClick1() {
     navigate("/");
   }
@@ -110,7 +115,7 @@ const Sidemenu = () => {
 
         <li
           className="flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center"
-          onClick={handleClick1}
+          onClick={handleLogout}
         >
           <CiLogout className="text-black" />
           <span className="text-black">Logout</span>

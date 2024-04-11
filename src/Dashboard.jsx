@@ -23,9 +23,7 @@ const Dashboard = () => {
  return (
     <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
       {/* Sidemenu and other dashboard-specific UI elements */}
-      <div className="Sidemenu p-10 bg-gradient-to-r from-[#AECCFE] from-3% via-white via-45% to-blue-100 to-96% text-black rounded-md">
         {/* Sidemenu content */}
-      </div>
       <div className="flex-grow">
         <Routes>
           <Route path="/" element={<Profile />} />

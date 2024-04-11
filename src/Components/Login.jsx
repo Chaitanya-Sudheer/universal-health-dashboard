@@ -2,29 +2,31 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navigation from "../Navigation";
 import { Footer } from "../Footer";
-import axios from "axios"; // Import axios
+import axiosInstance from "../Auth";
 
 const Login = () => {
   let navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState(false);
-  const api = import.meta.env.VITE_BACKEND; 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${api}/tokens/authentication`, {
-        email,
-        password,
-      });
+      const response = await axiosInstance.post(
+        `${import.meta.env.VITE_BACKEND}/tokens/authentication`,
+        {
+          email,
+          password,
+        }
+      );
       const { token, expiry } = response.data.authentication_token;
       localStorage.setItem("authToken", token);
       localStorage.setItem("authTokenExpiry", expiry);
       navigate("/Dashboard");
     } catch (error) {
       console.error("Authentication failed:", error);
-      setLoginError(true); 
+      setLoginError(true);
     }
   };
 

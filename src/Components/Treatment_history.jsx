@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Dnav from "./Dnav";
 import Sidemenu from "./Sidemenu";
+import axiosInstance from "../Auth";
 
 const Treatment_history = () => {
   const [treatmentHistoryData, setTreatmentHistoryData] = useState([]);
@@ -8,16 +9,17 @@ const Treatment_history = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = `${import.meta.env.VITE_BACKEND}/GetTreatmentHistoryByPatientID/11`;
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
+        const response = await axiosInstance.get(
+          "/GetTreatmentHistoryByPatientID/11"
+        );
+        const data = response.data;
         if (data && Array.isArray(data.treatmentHistory)) {
           setTreatmentHistoryData(data.treatmentHistory);
         } else {
-          console.error("Expected treatmentHistory to be an array, but received:", data);
+          console.error(
+            "Expected treatmentHistory to be an array, but received:",
+            data
+          );
         }
       } catch (error) {
         console.error("There was a problem with your fetch operation: ", error);
@@ -54,20 +56,21 @@ const Treatment_history = () => {
                 </tr>
               </thead>
               <tbody>
-                {Array.isArray(treatmentHistoryData) && treatmentHistoryData.map((item, index) => (
-                  <tr key={index} className="text-black">
-                    <th>{item.treatment_id}</th>
-                    <td>{item.treatmenttype}</td>
-                    <td>{item.reason}</td>
-                    <td>{item.doctor}</td>
-                    <td>{item.hospital}</td>
-                    <td>{item.medications}</td>
-                    <td>{item.procedure}</td>
-                    <td>{item.date}</td>
-                    <td>{item.complications}</td>
-                    <td>{item.outcome}</td>
-                  </tr>
-                ))}
+                {Array.isArray(treatmentHistoryData) &&
+                  treatmentHistoryData.map((item, index) => (
+                    <tr key={index} className="text-black">
+                      <th>{item.treatment_id}</th>
+                      <td>{item.treatmenttype}</td>
+                      <td>{item.reason}</td>
+                      <td>{item.doctor}</td>
+                      <td>{item.hospital}</td>
+                      <td>{item.medications}</td>
+                      <td>{item.procedure}</td>
+                      <td>{item.date}</td>
+                      <td>{item.complications}</td>
+                      <td>{item.outcome}</td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>

@@ -1,13 +1,13 @@
 // App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProtectedRoute from "./ProtectedRoute"; // Adjust the import path as necessary
-import Sign_In from "./Sign_In"; // Adjust the import path as necessary
-import Home from "./Home"; // Adjust the import path as necessary
-import Login from "./Components/Login"; // Adjust the import path as necessary
-import Dashboard from "./Dashboard"; // Adjust the import path as necessary
-import About from "./About"; // Adjust the import path as necessary
-import Contact from "./Contact"; // Adjust the import path as necessary
+import ProtectedRoute from "./ProtectedRoute";
+import Sign_In from "./Sign_In";
+import Home from "./Home";
+import Login from "./Components/Login";
+import Dashboard from "./Dashboard";
+import About from "./About";
+import Contact from "./Contact";
 
 const App = () => {
   return (

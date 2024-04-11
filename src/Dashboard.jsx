@@ -2,18 +2,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import Overview from './Components/Overview'; // Adjust the import path as necessary
-import Profile from './Components/Profile'; // Adjust the import path as necessary
-import Prescription from './Components/Prescription'; // Adjust the import path as necessary
-import Records from './Components/Records'; // Adjust the import path as necessary
-import Medicines from './Components/Medicines'; // Adjust the import path as necessary
-import Appointments from './Components/Appointments'; // Adjust the import path as necessary
-import Treatment_history from './Components/Treatment_history'; // Adjust the import path as necessary
-import Medical_directives from './Components/Medical_directives'; // Adjust the import path as necessary
-import Vaccination_history from './Components/Vaccination_history'; // Adjust the import path as necessary
-import Allergies from './Components/Allergies'; // Adjust the import path as necessary
-import Fam_Med_History from './Components/Fam_Med_History'; // Adjust the import path as necessary
-import Social_history from './Components/Social_history'; // Adjust the import path as necessary
+import Overview from './Components/Overview';
+import Profile from './Components/Profile';
+import Prescription from './Components/Prescription';
+import Records from './Components/Records';
+import Medicines from './Components/Medicines';
+import Appointments from './Components/Appointments';
+import Treatment_history from './Components/Treatment_history';
+import Medical_directives from './Components/Medical_directives';
+import Vaccination_history from './Components/Vaccination_history';
+import Allergies from './Components/Allergies';
+import Fam_Med_History from './Components/Fam_Med_History';
+import Social_history from './Components/Social_history';
 
 const Dashboard = () => {
  let navigate = useNavigate();

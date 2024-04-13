@@ -20,16 +20,16 @@ const Profile = () => {
         <div className="m-auto grid justify-center mt-4">
         <div className="max-h-screen overflow-y-auto">
           <ul className="flex flexcol gap-4">
-            <li>
+            
               <label className="form-control w-full max-w-xs pt-28 pb-10 pl-10 gap-1 ml-2.5">
                 <div className="label">
                   <span className="label-text text-black">Name</span>
                 </div>
                 <input type="text" placeholder="Type here" className="input input-bordered input-info bg-white border-2  w-full max-w-xs" />
               </label>
-            </li>
+            
 
-            <li>
+            
               <label className="form-control w-full max-w-xs pt-28 pb-10 pl-10 gap-1 ml-2.5">
                 <div className="label">
                   <span className="label-text text-black">Date of birth</span>
@@ -42,9 +42,9 @@ const Profile = () => {
                   placeholderText="Select date"
                 />
               </label>
-            </li>
+            
 
-            <li>
+            
               <label className="form-control w-full max-w-xs pt-28 pb-10 pl-10 gap-1 ml-2.5">
                 <div className="label">
                   <span className="label-text text-black">Gender</span>
@@ -67,11 +67,11 @@ const Profile = () => {
                   </div>
                 </div>
               </label>
-            </li>
+            
           </ul>
 
           <ul>
-          <li>
+          
               <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5">
                 <div className="label">
                   <span className="label-text text-black">Address</span>
@@ -79,8 +79,8 @@ const Profile = () => {
                 <input type="text" placeholder="Type here" className="input input-bordered input-info bg-white border-2" style={{ width: '561px' }} />
               </label>
 
-            </li>
-            <li>
+            
+            
             <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-6 gap-1 ml-[640px] relative top-[-127px]">
                 <div className="label">
                   <span className="label-text text-black">City</span>
@@ -104,9 +104,9 @@ const Profile = () => {
                   </div>
                 </div>
               </label>
-              </li>
+              
 
-            <li>
+            
             <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-126px]">
                 <div className="label">
                   <span className="label-text text-black">State</span>
@@ -129,37 +129,37 @@ const Profile = () => {
                     </svg>
                   </div>
                 </div>
-              </label> </li>
+              </label> 
 
-        <li>
+        
         <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-[295px] relative top-[-253px]">
                 <div className="label">
                   <span className="label-text text-black">Zipcode</span>
                 </div>
                 <input type="text" placeholder="Type here" className="input input-bordered input-info bg-white border-2  w-full max-w-xs" />
               </label>
-        </li>
+        
       
 
-      <li>
+      
       <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-[605px] relative top-[-380.5px] mr-[-57px]">
                 <div className="label">
                   <span className="label-text text-black">Country</span>
                 </div>
                 <input type="text" placeholder="Type here" className="input input-bordered input-info bg-white border-2  w-full max-w-xs" />
               </label>
-      </li>
+      
 
-      <li>
+      
       <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-380.5px]">
                 <div className="label">
                   <span className="label-text text-black">Phone Number</span>
                 </div>
                 <input type="text" placeholder="Type here" className="input input-bordered input-info bg-white border-2  w-full max-w-xs" />
               </label>
-      </li>
+      
 
-      <li>
+      
       <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-80 relative top-[-508px]">
                 <div className="label">
                   <span className="label-text text-black">Email</span>
@@ -167,24 +167,24 @@ const Profile = () => {
                 <input type="text" placeholder="Type here" className="input input-bordered input-info bg-white border-2  w-full max-w-xs" />
               </label>
 
-      </li>
-      <li>
+      
+      
       <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-508px]">
                 <div className="label">
                   <span className="label-text text-black">Marital Status</span>
                 </div>
                 <input type="text" placeholder="Type here" className="input input-bordered input-info bg-white border-2  w-full max-w-xs" />
               </label>
-      </li>
-      <li>
+      
+      
       <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-80 relative top-[-635px]">
                 <div className="label">
                   <span className="label-text text-black">Nationality</span>
                 </div>
                 <input type="text" placeholder="Type here" className="input input-bordered input-info bg-white border-2  w-full max-w-xs" />
-              </label></li>
+              </label>
 
-      <li>
+      
       <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-640px]">
                 <div className="label">
                   <span className="label-text text-black">Language Preference</span>
@@ -208,10 +208,10 @@ const Profile = () => {
                   </div>
                 </div>
               </label>
-      </li>
+      
 
       
-      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500 relative top-[-600px] ml-2">Submit</button>
+      <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500 relative top-[-630px] ml-12">Submit</button>
       
           </ul>
         </div>

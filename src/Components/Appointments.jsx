@@ -1,94 +1,168 @@
-import React from 'react'
-import Sidemenu from './Sidemenu'
-import Dnav from './Dnav'
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import React, { useState, useEffect } from 'react';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import axiosInstance from "../Auth";
+import Sidemenu from './Sidemenu';
+import Dnav from './Dnav';
+import { TextField } from '@mui/material';
+import dayjs from 'dayjs';
+
+
 
 const Appointments = () => {
+  const [data, setData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedSpecialization, setSelectedSpecialization] = useState('');
+  const [specializations, setSpecializations] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [selectedDoctorId, setSelectedDoctorId] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [selectedDate, setSelectedDate] = useState(null);
 
- const handleDateChange = (date) => {
-    setSelectedDate(date);
- };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axiosInstance.get("/all-doctors");
+        const data = response.data;
+        if (data && Array.isArray(data)) {
+          setData(data);
+          setFilteredData(data); 
+          
+          const uniqueSpecializations = [...new Set(data.map(doctor => doctor.specialization))];
+          setSpecializations(uniqueSpecializations);
+        } else {
+          console.error(
+            "Expected data to be an array, but received:",
+            data
+          );
+        }
+      } catch (error) {
+        console.error("There was a problem with your fetch operation: ", error);
+      }
+    };
 
+    fetchData();
+  }, []);
 
+  const handleSearch = (value) => {
+    setSearchQuery(value);
+    filterData(value, selectedSpecialization);
+  };
+
+  const handleSpecializationChange = (event) => {
+    const value = event.target.value;
+    setSelectedSpecialization(value);
+    filterData(searchQuery, value);
+  };
+
+  const filterData = (name, specialization) => {
+    const filtered = data.filter((doctor) =>
+      doctor.name.toLowerCase().includes(name.toLowerCase()) &&
+      (specialization === '' || doctor.specialization.toLowerCase() === specialization.toLowerCase())
+    );
+    setFilteredData(filtered);
+  };
+
+  const handleDoctorSelection = (doctorId) => {
+    setSelectedDoctorId(prevId => (prevId === doctorId ? '' : doctorId));
+    setErrorMessage('');
+  };
+
+  const handlePrintDate = () => {
+    if (selectedDate) {
+      const formattedDate = dayjs(selectedDate).format('YYYY-MM-DD HH:mm:ss');
+      console.log("Selected Date and Time:", formattedDate);
+    } else {
+      console.log("No date selected.");
+    }
+  };
   
 
-
+  const handleBookAppointment = () => {
+    if (!selectedDoctorId) {
+      setErrorMessage('Please select a doctor to book an appointment.');
+      return;
+    }
+    console.log("Selected Doctor ID:", selectedDoctorId);
+    // Add your logic to book the appointment here
+  };
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
-    <div className="flex flex-col md:flex-row">
-      <Sidemenu />
-      
-      <div className="m-auto grid justify-left mt-4 relative">
-      <h1 className="text-[27px] absolute top-20 left-12 ml-2 text-black">Appointments</h1>
-      <div className="m-auto grid justify-center mt-4">
-          <ul className="flex flexcol gap-4">
-            
-              <label className="form-control w-full max-w-xs pt-28 pb-10 pl-10 gap-1 ml-2.5">
-                <div className="label">
-                  <span className="label-text text-black">Treatment</span>
-                </div>
-                <input type="text" placeholder="Type service required" className="input input-bordered input-info bg-white border-2" style={{ width: '561px' }}/>
-              </label>
-              </ul>
-             </div> 
+      <div className="flex flex-col md:flex-row">
+        <Sidemenu />
+        <Dnav />
+        <div className="border border-blue-500 border-b-4 border-r-4 rounded-lg p-6 mb-20 mt-20 ml-12 text-base md:w-3/4 lg:w-2/3 xl:w-3/4">
+          <p className="text-2xl font-bold text-black mb-4">APPOINTMENTS</p>
+          <div className="flex mb-4">
+            <input
+              type="text"
+              placeholder="Search by doctor name"
+              value={searchQuery}
+              onChange={(e) => handleSearch(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg py-2 px-4 mb-4 mr-2 focus:outline-none focus:border-blue-500"
+            />
+            <select
+              value={selectedSpecialization}
+              onChange={handleSpecializationChange}
+              className="border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:border-blue-500"
+            >
+              <option value="">All Specializations</option>
+              {specializations.map((specialization, index) => (
+                <option key={index} value={specialization}>{specialization}</option>
+              ))}
+            </select>
+          </div>
+          <table className="table-fixed w-full">
+            <thead>
+              <tr className="bg-blue-200">
+                <th className="w-1/8 py-2 px-4 font-bold">Select</th>
+                <th className="w-1/8 py-2 px-4 font-bold">Doctor Name</th>
+                <th className="w-1/8 py-2 px-4 font-bold">Specialization</th>
+                <th className="w-1/4 py-2 px-4 font-bold">Available Consultation Time</th>
+                <th className="w-1/8 py-2 px-4 font-bold">Hospital Name</th>
+                <th className="w-1/4 py-2 px-4 font-bold">Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredData.map((doctor, index) => (
+                <tr key={index} className={selectedDoctorId === doctor.doctor_id ? "bg-blue-100" : (index % 2 === 0 ? "bg-gray-100" : "bg-white")}>
+                  <td className="py-2 px-4">
+                    <input
+                      type="checkbox"
+                      checked={selectedDoctorId === doctor.doctor_id}
+                      onChange={() => handleDoctorSelection(doctor.doctor_id)}
+                    />
+                  </td>
+                  <td className="py-2 px-4">{doctor.name}</td>
+                  <td className="py-2 px-4">{doctor.specialization}</td>
+                  <td className="py-2 px-4">{doctor.available_consultation_time}</td>
+                  <td className="py-2 px-4">{doctor.hospital_name}</td>
+                  <td className="py-2 px-4">{doctor.address}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DateTimePicker
+              label="Appointment Date & Time"
+              value={selectedDate}
+              onChange={(newValue) => {
+                setSelectedDate(newValue);
+              }}
+              renderInput={(params) => <TextField {...params} className="customDateTimePickerInput" />}            />
+          </LocalizationProvider>
+          <div style={{ marginBottom: '20px' }} />
+          <button onClick={() => { handleBookAppointment(); handlePrintDate(); }} className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4">Book Appointment and Print Date/Time</button>
+{errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
 
-             <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5">
-                <div className="label">
-                  <span className="label-text text-black">Consulting Doctor</span>
-                </div>
-                <input type="text" placeholder="Type here" className="input input-bordered input-info bg-white border-2  w-full max-w-xs" />
-              </label> 
-
-              <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-5px]">
-                <div className="label">
-                  <span className="label-text text-black">Timing</span>
-                </div>
-                <div className="inline-block relative w-64">
-                  <select className="input input-bordered input-info bg-white border-2 w-full max-w-xs">
-                    <option>9:00 - 10:00</option> 
-                    <option>10:00- 11:00</option>
-                    <option>11:00 - 12:00</option>
-                    <option>1:00 - 2:00</option>
-                    <option>2:00 - 3:00</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg
-                      className="fill-current h-4 w-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                    </svg>
-                  </div>
-                </div>
-              </label> 
-
-              <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-5px]">
- <div className="label">
-    <span className="label-text text-black">Date</span>
- </div>
- <DatePicker
-    className="input input-bordered input-info bg-white border-2 w-full max-w-xs"
-    dateFormat="dd/MM/yyyy"
-    selected={selectedDate}
-    onChange={handleDateChange}
-    placeholderText="Select date"
- />
-</label>    
-            
-
+        </div>
       </div>
         
       
     </div>
-    <Dnav />
-  </div>
   );
-};
-
-
+}
 
 export default Appointments;

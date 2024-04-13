@@ -7,9 +7,12 @@ import 'react-datepicker/dist/react-datepicker.css';
 const Appointments = () => {
   const [selectedDate, setSelectedDate] = useState(null);
 
-  const handleDateChange = (date) => {
+ const handleDateChange = (date) => {
     setSelectedDate(date);
-  };
+ };
+
+
+  
 
 
 
@@ -63,7 +66,18 @@ const Appointments = () => {
                 </div>
               </label> 
 
-              
+              <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-5px]">
+ <div className="label">
+    <span className="label-text text-black">Date</span>
+ </div>
+ <DatePicker
+    className="input input-bordered input-info bg-white border-2 w-full max-w-xs"
+    dateFormat="dd/MM/yyyy"
+    selected={selectedDate}
+    onChange={handleDateChange}
+    placeholderText="Select date"
+ />
+</label>    
             
 
       </div>

@@ -19,6 +19,8 @@ const Appointments = () => {
   const [selectedDoctorId, setSelectedDoctorId] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [selectedDate, setSelectedDate] = useState(null);
+  const [hospitalSearchQuery, setHospitalSearchQuery] = useState('');
+  const [patientID, setPatientID] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,24 +71,81 @@ const Appointments = () => {
     setErrorMessage('');
   };
 
+  const handleHospitalSearch = (value) => {
+    setHospitalSearchQuery(value);
+    filterDoctors(searchQuery, selectedSpecialization, value); 
+  };
+
+  const filterDoctors = (name, specialization, hospital) => {
+    const filtered = data.filter((doctor) =>
+      doctor.name.toLowerCase().includes(name.toLowerCase()) &&
+      (specialization === '' || doctor.specialization.toLowerCase() === specialization.toLowerCase()) &&
+      doctor.hospital_name.toLowerCase().includes(hospital.toLowerCase()) // Check hospital name
+    );
+    setFilteredData(filtered);
+  };
+
+
   const handlePrintDate = () => {
     if (selectedDate) {
-      const formattedDate = dayjs(selectedDate).format('YYYY-MM-DD HH:mm:ss');
+      const formattedDate = dayjs(selectedDate).format('YYYY-MM-DDTHH:mm:ss[Z]');
       console.log("Selected Date and Time:", formattedDate);
     } else {
-      console.log("No date selected.");
+      console.error("No date selected.");
     }
   };
   
 
-  const handleBookAppointment = () => {
-    if (!selectedDoctorId) {
+  const handleBookAppointment = async () => {
+    console.log("Selected Doctor ID:", selectedDoctorId);
+  
+    if (!selectedDoctorId ) {
       setErrorMessage('Please select a doctor to book an appointment.');
       return;
     }
-    console.log("Selected Doctor ID:", selectedDoctorId);
-    // Add your logic to book the appointment here
+  
+    if (!selectedDate ) {
+      setErrorMessage('Please select a date to book an appointment.');
+      return;
+    }
+  
+    try {
+      // Fetch user ID from the /me endpoint
+      const response = await axiosInstance.get("/me");
+      const userData = response.data;
+      
+      if (userData && userData.patient_id) {
+        setPatientID(userData.patient_id);
+      } else {
+        console.error("Unexpected response from /me endpoint:", userData);
+      }
+    } catch (error) {
+      console.error("Error fetching user ID from /me endpoint:", error);
+    }
+  
+    const appointmentData = {
+      doctor_id: selectedDoctorId,
+      patient_id: patientID, // Use userID from state
+      appointment_date: dayjs(selectedDate).format('YYYY-MM-DDTHH:mm:ss[Z]'),
+      status: 'scheduled'
+    };
+  
+    try {
+      const response = await axiosInstance.post("/appointments", appointmentData);
+      console.log("Appointment booked successfully:", response.data);
+      // Handle successful appointment booking, e.g., show a success message or redirect
+    } catch (error) {
+      console.error("Error booking appointment:", error);
+      setErrorMessage('Failed to book appointment. Please try again.');
+    }
   };
+  
+  // Use useEffect to log the updated userID
+  useEffect(() => {
+    console.log("Patient ID:", patientID);
+  }, [patientID]);
+  
+  
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
@@ -101,6 +160,13 @@ const Appointments = () => {
               placeholder="Search by doctor name"
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg py-2 px-4 mb-4 mr-2 focus:outline-none focus:border-blue-500"
+            />
+            <input
+              type="text"
+              placeholder="Search by hospital name"
+              value={hospitalSearchQuery}
+              onChange={(e) => handleHospitalSearch(e.target.value)} // Handle hospital name search
               className="w-full border border-gray-300 rounded-lg py-2 px-4 mb-4 mr-2 focus:outline-none focus:border-blue-500"
             />
             <select
@@ -154,8 +220,7 @@ const Appointments = () => {
               renderInput={(params) => <TextField {...params} className="customDateTimePickerInput" />}            />
           </LocalizationProvider>
           <div style={{ marginBottom: '20px' }} />
-          <button onClick={() => { handleBookAppointment(); handlePrintDate(); }} className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4">Book Appointment and Print Date/Time</button>
-{errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
+          <button onClick={() => { handleBookAppointment(); handlePrintDate(); }} className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4">Book Appointment and Print Date/Time</button> {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
 
         </div>
       </div>

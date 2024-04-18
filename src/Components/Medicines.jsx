@@ -2,6 +2,7 @@ import React from 'react'
 import Sidemenu from './Sidemenu'
 import Dnav from './Dnav'
 
+
 const Medicines = () => {
     const medicinesData = [
       {
@@ -56,6 +57,7 @@ const Medicines = () => {
       
       <h1 className="text-[27px] absolute top-20 left-12 ml-2 text-black">Medicines</h1>
       <div className="overflow-x-auto">
+      
             <table className="table table-xs " style={{ marginTop: '150px', marginLeft: '45px' }}>
               <thead>
                 <tr>
@@ -85,7 +87,7 @@ const Medicines = () => {
               </tbody>
             </table>
           
-      
+          
     </div>
   </div>
 </div>

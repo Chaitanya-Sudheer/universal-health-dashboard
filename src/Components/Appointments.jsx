@@ -220,7 +220,7 @@ const Appointments = () => {
               renderInput={(params) => <TextField {...params} className="customDateTimePickerInput" />}            />
           </LocalizationProvider>
           <div style={{ marginBottom: '20px' }} />
-          <button onClick={() => { handleBookAppointment(); handlePrintDate(); }} className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4">Book Appointment and Print Date/Time</button> {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
+          <button onClick={() => { handleBookAppointment(); handlePrintDate(); }} className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4">Book Appointment</button> {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
 
         </div>
       </div>

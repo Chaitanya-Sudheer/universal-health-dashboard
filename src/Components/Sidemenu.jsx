@@ -23,27 +23,27 @@ const Sidemenu = () => {
   }
 
   function handleClick2() {
-    navigate("/dashboard/");
+    navigate("/dashboard/patient/");
   }
 
   function handleClick3() {
-    navigate("/dashboard/profile");
+    navigate("/dashboard/patient/profile");
   }
 
   function handleClick4() {
-    navigate("/dashboard/prescription");
+    navigate("/dashboard/patient/prescription");
   }
 
   function handleClick5() {
-    navigate("/dashboard/records");
+    navigate("/dashboard/patient/records");
   }
 
   function handleClick6() {
-    navigate("/dashboard/medicines");
+    navigate("/dashboard/patient/medicines");
   }
 
   function handleClick7() {
-    navigate("/dashboard/appointments");
+    navigate("/dashboard/patient/appointments");
   }
 
   return (

@@ -16,7 +16,7 @@ const Sign_In = () => {
   }
 
   function handleClick2() {
-    navigate("/Dashboard"); // Navigates to the /home route
+    navigate("/Dashboard/patient"); // Navigates to the /home route
   }
 
   const handleSubmit = async (event) => {

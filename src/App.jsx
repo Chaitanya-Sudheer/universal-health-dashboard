@@ -8,6 +8,7 @@ import Login from "./Components/Login";
 import Dashboard from "./Dashboard";
 import About from "./About";
 import Contact from "./Contact";
+import Dashboard2 from "./Components/Doctor/Dashboard2";
 
 const App = () => {
   return (
@@ -17,10 +18,18 @@ const App = () => {
         <Route path="/sign_in" element={<Sign_In />} />
         <Route path="/login" element={<Login />} />
         <Route
-          path="/dashboard/*"
+          path="/dashboard/patient/*"
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+         <Route
+          path="/dashboard/doctor/*"
+          element={
+            <ProtectedRoute>
+              <Dashboard2/>
             </ProtectedRoute>
           }
         />

@@ -66,7 +66,7 @@ const Home = () => {
         </div>
       </div>
       <div className="bg-white">
-        <div className="text-black pt-6 text-4xl">
+        <div className="text-black ml-[600px] pt-6 text-4xl">
           <p>OUR SERVICES</p>
         </div>
       </div>

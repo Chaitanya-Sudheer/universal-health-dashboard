@@ -39,23 +39,7 @@ const Records = () => {
       title: "SOCIAL HISTORY",
       onClick: () => navigate("/dashboard/patient/social_history"),
     },
-    {
-      id: 7,
-      title: "REVIEW OF SYSTEMS",
-      //description: "  ",
-    },
-
-    {
-      id: 8,
-      title: "PHYSICAL EXAMINATIONS",
-      //description: " ",
-    },
-
-    {
-      id: 8,
-      title: "OTHERS",
-      //description: " ",
-    },
+   
   ];
 
   return (

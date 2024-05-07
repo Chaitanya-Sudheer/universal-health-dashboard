@@ -37,7 +37,7 @@ const Sidemenu = () => {
   }
 
  function handleClick6() {
-    navigate("/dashboard/doctor/appointments");
+    navigate("/dashboard/doctor/appointments2");
   }
 
   return (

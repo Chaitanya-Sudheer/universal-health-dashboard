@@ -54,7 +54,6 @@ const Medicines = () => {
       <Sidemenu />
       <Dnav />
       <div className="m-auto grid justify-left mt-4 relative">
-      
       <h1 className="text-[27px] absolute top-20 left-12 ml-2 text-black">Medicines</h1>
       <div className="overflow-x-auto">
       

@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Profile2 from './Profile2';
 import Prescriptions2 from './Prescriptions2';
 import Appointments2 from './Appointments2';
-import Patients from './Patients';
+import Patients from './Patients.jsx';
 
 const Dashboard2 = () => {
     let navigate = useNavigate();

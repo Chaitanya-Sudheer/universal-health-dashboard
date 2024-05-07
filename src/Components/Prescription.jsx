@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axiosInstance from "../Auth";
 import Sidemenu from "./Sidemenu";
 import Dnav from "./Dnav";
-import PrescriptionsList from "./PrescriptionsList";
-import PrescriptionDetails from "./PrescriptionDetails";
+
 
 const Prescription = () => {
   const [selectedPrescription, setSelectedPrescription] = useState(null);

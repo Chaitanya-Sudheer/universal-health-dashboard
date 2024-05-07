@@ -1,49 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidemenu from './Sidemenu';
 import Dnav from './Dnav';
+import axiosInstance from "../Auth";
 
+const MedicalDirectives = () => {
+  const [medicalDirectiveData, setMedicalDirectiveData] = useState([]);
 
-const Medical_directives = () => {
-const medicalDirectiveData = [
-  {
-    id: 1,
-    directive: "Do Not Resuscitate (DNR) Order",
-    reason: "Patient's wish to avoid aggressive life-saving measures.",
-    authorizedBy: "Dr. Emily Johnson",
-    dateAuthorized: "10/15/2019",
-  },
-  {
-    id: 2,
-    directive: "Living Will",
-    reason: "Refusal of life-sustaining treatment if in a terminal condition.",
-    authorizedBy: "Patient and two witnesses",
-    dateAuthorized: "05/20/2019",
-  },
-  {
-    id: 3,
-    directive: "Power of Attorney for Healthcare",
-    reason: "Designated proxy to make healthcare decisions if patient is unable to communicate.",
-    authorizedBy: "Notary Public",
-    dateAuthorized: "08/12/2020",
-  },
-  {
-    id: 4,
-    directive: "Organ Donation Directive",
-    reason: "Patient wishes to donate organs in case of death.",
-    authorizedBy: "Patient",
-    dateAuthorized: "02/28/2029",
-  },
-  {
-    id: 5,
-    directive: "Palliative Care Directive",
-    reason: "Opt for palliative care for pain management in terminal illness.",
-    authorizedBy: "Dr. Michael Smith",
-    dateAuthorized: "11/05/2023",
-  },
+  useEffect(() => {
+    const fetchMedicalDirectives = async () => {
+      try {
+        const response = await axiosInstance.get("/getMedicalDirectivesByPatientIdHandler");
+        setMedicalDirectiveData(response.data.directives);
+      } catch (error) {
+        console.error("Error fetching medical directives:", error);
+      }
+    };
 
-  
-];
-
+    fetchMedicalDirectives();
+  }, []);
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
@@ -62,18 +36,16 @@ const medicalDirectiveData = [
                   <th className="text-black pt-2"></th>
                   <th className="text-black">Directive</th>
                   <th className="text-black">Reason</th>
-                  <th className="text-black">Authorized By</th>
                   <th className="text-black">Date Authorized</th>
                 </tr>
               </thead>
               <tbody>
-                {medicalDirectiveData.map((item, index) => (
-                  <tr key={index} className="text-black">
-                    <th>{item.id}</th>
+                {medicalDirectiveData.map((item) => (
+                  <tr key={item.directive_id} className="text-black">
+                    <th>{item.directive_id}</th>
                     <td>{item.directive}</td>
                     <td>{item.reason}</td>
-                    <td>{item.authorizedBy}</td>
-                    <td>{item.dateAuthorized}</td>
+                    <td>{item.date_authorized}</td>
                   </tr>
                 ))}
               </tbody>
@@ -85,4 +57,4 @@ const medicalDirectiveData = [
   );
 };
 
-export default Medical_directives
+export default MedicalDirectives;

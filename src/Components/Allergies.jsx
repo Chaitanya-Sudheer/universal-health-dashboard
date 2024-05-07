@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidemenu from './Sidemenu';
 import Dnav from './Dnav';
+import axiosInstance from "../Auth";
 
 const Allergies = () => {
-const allergyData = [
-  {
-    id: 1,
-    allergen: "Pollen",
-    reaction: "Runny nose, sneezing",
-    severity: "Mild",
-    treatment: "Antihistamines",
-    status: "Active",
-  },
-  {
-    id: 2,
-    allergen: "Penicillin",
-    reaction: "Hives, itching",
-    severity: "Moderate",
-    treatment: "Avoid Penicillin, EpiPen",
-    status: "Inactive",
-  },
-];
+  const [allergyData, setAllergyData] = useState([]);
+
+  useEffect(() => {
+    const fetchAllergies = async () => {
+      try {
+        const response = await axiosInstance.get("/getAllergiesByPatientIdHandler");
+        setAllergyData(response.data.allergies);
+      } catch (error) {
+        console.error("Error fetching allergies:", error);
+      }
+    };
+
+    fetchAllergies();
+  }, []);
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
@@ -34,8 +31,7 @@ const allergyData = [
           <table className="table table-xs">
             <thead>
               <tr>
-                <th className="text-black pt-2"></th>
-                <th className="text-black">Allergen</th>
+                <th className="text-black pt-2">Allergen</th>
                 <th className="text-black">Reaction</th>
                 <th className="text-black">Severity</th>
                 <th className="text-black">Treatment</th>
@@ -43,9 +39,8 @@ const allergyData = [
               </tr>
             </thead>
             <tbody>
-              {allergyData.map((item, index) => (
-                <tr key={index} className="text-black">
-                  <th>{item.id}</th>
+              {allergyData.map((item) => (
+                <tr key={item.allergy_id} className="text-black">
                   <td>{item.allergen}</td>
                   <td>{item.reaction}</td>
                   <td>{item.severity}</td>

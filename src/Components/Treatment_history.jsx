@@ -9,9 +9,7 @@ const Treatment_history = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axiosInstance.get(
-          "/GetTreatmentHistoryByPatientID/11"
-        );
+        const response = await axiosInstance.get("/GetTreatmentHistoryByPatientID");
         const data = response.data;
         if (data && Array.isArray(data.treatmentHistory)) {
           setTreatmentHistoryData(data.treatmentHistory);

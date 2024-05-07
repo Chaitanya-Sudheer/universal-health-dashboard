@@ -273,18 +273,17 @@ const Profile = () => {
             Profile
           </h1>
            
-          <div className="bg-white p-6 rounded-lg shadow-md ml-12 relative top-[150px] ">
+          <div className="bg-white border border-blue-500 border-b-4 border-r-4 rounded-lg p-6 rounded-lg shadow-md ml-12 relative top-[150px] ">
             {/* Display profile data here */}
-            <p className="text-black mb-5">Name: {profileData.name}</p>
-
-            <p className="text-black mb-5">Date of Birth: {profileData.date_of_birth}</p>
-            <p className="text-black mb-5">Gender: {profileData.gender}</p>
-            <p className="text-black mb-5">Address: {profileData.address}</p>
-            <p className="text-black mb-5">Phone Number: {profileData.phone_number}</p>
-            <p className="text-black mb-5">Email: {profileData.email}</p>
-            <p className="text-black mb-5">Marital Status: {profileData.marital_status}</p>
-            <p className=" text-black mb-5">Nationality: {profileData.nationality}</p>
-            <p className="text-black mb-5">Language Preference: {profileData.language_preference}</p>
+            <p className="text-black mb-5 text-[18px]">Name: {profileData.name}</p>
+            <p className="text-black mb-5 text-[18px]">Date of Birth: {profileData.date_of_birth}</p>
+            <p className="text-black mb-5 text-[18px]">Gender: {profileData.gender}</p>
+            <p className="text-black mb-5 text-[18px]">Address: {profileData.address}</p>
+            <p className="text-black mb-5 text-[18px]">Phone Number: {profileData.phone_number}</p>
+            <p className="text-black mb-5 text-[18px]">Email: {profileData.email}</p>
+            <p className="text-black mb-5 text-[18px]">Marital Status: {profileData.marital_status}</p>
+            <p className=" text-black mb-5 text-[18px]">Nationality: {profileData.nationality}</p>
+            <p className="text-black mb-5 text-[18px]">Language Preference: {profileData.language_preference}</p>
           </div>
           <Dnav />
         </div>

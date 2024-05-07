@@ -27,7 +27,7 @@ const Patients = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
     <div className="flex flex-col md:flex-row">
-      <Sidemenu />
+      <Sidemenu2 />
        <Dnav />
       <div className="m-auto grid justify-left mt-4 relative">
       <h1 className="text-[27px] absolute top-20 left-12 ml-2 text-black">Patients</h1>

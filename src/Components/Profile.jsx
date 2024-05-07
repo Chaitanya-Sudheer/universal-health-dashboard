@@ -111,48 +111,24 @@ const Profile = () => {
                     <div className="label">
                       <span className="label-text text-black">City</span>
                     </div>
-                    <div className="inline-block relative w-64">
-                      <select className="input input-bordered input-info bg-white border-2  w-full max-w-xs">
-                        <option>Kollam</option>
-                        <option>Trivandrum</option>
-                        <option>Kochi</option>
-                        <option>Thrissur</option>
-                        <option>Alappuzha</option>
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg
-                          className="fill-current h-4 w-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                        </svg>
-                      </div>
-                    </div>
+                    <input
+                      type="text"
+                      placeholder="Type here"
+                      className="input input-bordered input-info bg-white border-2  w-full max-w-xs"
+                    />
+                  
                   </label>
 
                   <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-2.5 relative top-[-126px]">
                     <div className="label">
                       <span className="label-text text-black">State</span>
                     </div>
-                    <div className="inline-block relative w-64">
-                      <select className="input input-bordered input-info bg-white border-2 w-full max-w-xs">
-                        <option>Kerala</option>
-                        <option>Tamil Nadu</option>
-                        <option>Karnataka</option>
-                        <option>Maharashtra</option>
-                        <option>Hyderabad</option>
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg
-                          className="fill-current h-4 w-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                        </svg>
-                      </div>
-                    </div>
+                    
+                    <input
+                      type="text"
+                      placeholder="Type here"
+                      className="input input-bordered input-info bg-white border-2  w-full max-w-xs"
+                    />
                   </label>
 
                   <label className="form-control w-full max-w-xs pt-0.1 pb-10 pl-10 gap-1 ml-[295px] relative top-[-253px]">

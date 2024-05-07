@@ -1,73 +1,98 @@
-import React, { useState, useEffect } from 'react';
-import Sidemenu from './Sidemenu';
-import Dnav from './Dnav';
-import axiosInstance from "../Auth";
+import React from 'react'
+import Sidemenu from './Sidemenu'
+import Dnav from './Dnav'
+
 
 const Medicines = () => {
-  const [medicinesData, setMedicinesData] = useState([]);
-
-  useEffect(() => {
-    const fetchMedicinesData = async () => {
-       try {
-         const response = await axiosInstance.get("/getMedicationByPatientIdHandler");
-         const { medications } = response.data; // Extract medications array from response
-         if (Array.isArray(medications)) {
-           setMedicinesData(medications);
-         } else {
-           console.error(
-             "Expected 'medications' to be an array, but received:",
-             medications
-           );
-         }
-       } catch (error) {
-         console.error("There was a problem with your fetch operation: ", error);
-       }
-    };
-   
-    fetchMedicinesData();
-   }, []);
+    const medicinesData = [
+      {
+        medicationid: 101,
+        prescriptionid: 1181,
+        medicationname: "Aspirin",
+        dosage: "1 tablet",
+        frequency: "Daily",
+        startdate: "09/10/2023",
+        enddate: "05/12/2023",
+        instructions: "Take 1 tablet by mouth once daily for pain",
+      },
+      {
+        medicationid: 102,
+        prescriptionid: 1182,
+        medicationname: "Amoxicillin",
+        dosage: "1 tablet",
+        frequency: "Every 8 hours",
+        startdate: "15/01/2023",
+        enddate: "25/01/2023",
+        instructions: "Take 1 tablet by mouth every 8 hours for 10 days for an infection",
+      },
+      {
+        medicationid: 103,
+        prescriptionid: 1183,
+        medicationname: "Lisinopril",
+        dosage: "10 mg, 1 tablet",
+        frequency: "Daily",
+        startdate: "25/03/2022",
+        enddate: "05/12/2022",
+        instructions: "Take 1 tablet by mouth daily",
+      },
+      {
+        medicationid: 104,
+        prescriptionid: 1184,
+        medicationname: "Metformin",
+        dosage: "1 tablet",
+        frequency: "Twice daily",
+        startdate: "01/01/2022",
+        enddate: "05/03/2022",
+        instructions: "Take 1 tablet by mouth twice",
+      },
+      
+    ];
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
-      <div className="flex flex-col md:flex-row">
-        <Sidemenu />
-        <Dnav />
-        <div className="border border-blue-500 border-b-4 border-r-4 rounded-lg p-6 mb-20 mt-20 ml-12 text-lg md:text-xl md:w-3/4 lg:w-2/3 xl:w-3/4">
-          <p className="text-black">PRESCRIPTION</p>
-          <div className="m-auto grid justify-left mt-4 relative">
-            <div className="overflow-x-auto">
-              <table className="table-auto">
-                <thead>
-                  <tr>
-                    <th className="px-2 py-1">Prescription ID</th>
-                    <th className="px-2 py-1">Medication Name</th>
-                    <th className="px-2 py-1">Dosage</th>
-                    <th className="px-2 py-1">Frequency</th>
-                    <th className="px-2 py-1">Start Date</th>
-                    <th className="px-2 py-1">End Date</th>
-                    <th className="px-2 py-1">Instructions</th>
+    <div className="flex flex-col md:flex-row">
+      <Sidemenu />
+      <Dnav />
+      <div className="m-auto grid justify-left mt-4 relative">
+      <h1 className="text-[27px] absolute top-20 left-12 ml-2 text-black">Medicines</h1>
+      <div className="overflow-x-auto">
+      
+            <table className="table table-xs " style={{ marginTop: '150px', marginLeft: '45px' }}>
+              <thead>
+                <tr>
+                  <th className="text-black font-bold" style={{ fontSize: '16px',borderBottom: '1px solid black'}}>Medication ID</th>
+                  <th className="text-black font-bold" style={{ fontSize: '16px',borderBottom: '1px solid black'}}>Prescription ID</th>
+                  <th className="text-black font-bold" style={{ fontSize: '16px',borderBottom: '1px solid black'}}>Medication Name</th>
+                  <th className="text-black font-bold" style={{ fontSize: '16px',borderBottom: '1px solid black'}}>Dosage</th>
+                  <th className="text-black font-bold" style={{ fontSize: '16px',borderBottom: '1px solid black'}}>Frequency</th>
+                  <th className="text-black font-bold" style={{ fontSize: '16px',borderBottom: '1px solid black'}}>Start Date</th>
+                  <th className="text-black font-bold" style={{ fontSize: '16px',borderBottom: '1px solid black'}}>End Date</th>
+                  <th className="text-black font-bold" style={{ fontSize: '16px',borderBottom: '1px solid black'}}>Instructions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {medicinesData.map((item) => (
+                  <tr key={item.id} className="text-black">
+                    <td style={{ color: 'gray' }}>{item.medicationid}</td>
+                    <td style={{ color: 'gray' }}>{item.prescriptionid}</td>
+                    <td style={{ color: 'gray' }}>{item.medicationname}</td>
+                    <td style={{ color: 'gray' }}>{item.dosage}</td>
+                    <td style={{ color: 'gray'}}>{item.frequency}</td>
+                    <td style={{ color: 'gray' }}>{item.startdate}</td>
+                    <td style={{ color: 'gray' }}>{item.enddate}</td>
+                    <td style={{ color: 'gray' }}>{item.instructions}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {medicinesData.map((item, index) => (
-                    <tr key={index} className="text-black">
-                      <td className="border px-2 py-1">{item.prescription_id}</td>
-                      <td className="border px-2 py-1">{item.medication_name}</td>
-                      <td className="border px-2 py-1">{item.dosage}</td>
-                      <td className="border px-2 py-1">{item.frequency}</td>
-                      <td className="border px-2 py-1">{item.start_date}</td>
-                      <td className="border px-2 py-1">{item.end_date}</td>
-                      <td className="border px-2 py-1">{item.instructions}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
+                ))}
+              </tbody>
+            </table>
+          
+          
     </div>
+  </div>
+</div>
+  </div>
   );
+
 };
 
 export default Medicines;

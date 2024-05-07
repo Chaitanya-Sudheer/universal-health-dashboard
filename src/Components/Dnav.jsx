@@ -31,13 +31,13 @@ const Dnav = () => {
       </div>
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
         <li>
-          <a onClick={handleClick3} className="justify-between  label-text-alt link link-hover text-white" >
+          <a onClick={handleClick3} className="justify-between  label-text-alt link link-hover text-black" >
             Profile
           </a>
         </li>
-        <li><a className="label-text-alt link link-hover text-white" >Settings</a></li>
+        <li><a className="label-text-alt link link-hover text-black" >Settings</a></li>
         <li>
-          <a  onClick={handleClick1} className="label-text-alt link link-hover text-white"> Logout</a>
+          <a  onClick={handleClick1} className="label-text-alt link link-hover text-black"> Logout</a>
         </li>
       </ul>
       

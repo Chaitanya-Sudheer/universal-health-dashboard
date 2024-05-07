@@ -264,30 +264,36 @@ const Profile = () => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden bg-gray-100">
+    <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
+        <div className="flex flex-col md:flex-row">
       <Sidemenu />
-      <div className="flex justify-center items-center w-full">
-        <div className="w-full md:w-4/5 lg:w-3/5 xl:w-2/5">
-          <h1 className="text-3xl font-bold text-center text-black mt-4 md:mt-12">
+      
+      <div className="m-auto grid justify-left mt-4 relative">
+            <h1 className="text-[27px] absolute top-20 left-12 ml-2 text-black">
             Profile
           </h1>
-          <div className="bg-white p-6 rounded-lg shadow-md">
+           
+          <div className="bg-white p-6 rounded-lg shadow-md ml-12 relative top-[150px] ">
             {/* Display profile data here */}
-            <p className="text-black mb-2">Name: {profileData.name}</p>
-            <p className="text-black mb-2">Date of Birth: {profileData.date_of_birth}</p>
-            <p className="text-black mb-2">Gender: {profileData.gender}</p>
-            <p className="text-black mb-2">Address: {profileData.address}</p>
-            <p className="text-black mb-2">Phone Number: {profileData.phone_number}</p>
-            <p className="text-black mb-2">Email: {profileData.email}</p>
-            <p className="text-black mb-2">Marital Status: {profileData.marital_status}</p>
-            <p className=" text-black mb-2">Nationality: {profileData.nationality}</p>
-            <p className="text-black mb-2">Language Preference: {profileData.language_preference}</p>
+            <p className="text-black mb-5">Name: {profileData.name}</p>
+
+            <p className="text-black mb-5">Date of Birth: {profileData.date_of_birth}</p>
+            <p className="text-black mb-5">Gender: {profileData.gender}</p>
+            <p className="text-black mb-5">Address: {profileData.address}</p>
+            <p className="text-black mb-5">Phone Number: {profileData.phone_number}</p>
+            <p className="text-black mb-5">Email: {profileData.email}</p>
+            <p className="text-black mb-5">Marital Status: {profileData.marital_status}</p>
+            <p className=" text-black mb-5">Nationality: {profileData.nationality}</p>
+            <p className="text-black mb-5">Language Preference: {profileData.language_preference}</p>
           </div>
           <Dnav />
         </div>
       </div>
     </div>
+    
+    
   );
+
   
   
 };

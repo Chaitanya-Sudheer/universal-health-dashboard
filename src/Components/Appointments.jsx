@@ -160,19 +160,19 @@ const Appointments = () => {
               placeholder="Search by doctor name"
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg py-2 px-4 mb-4 mr-2 focus:outline-none focus:border-blue-500"
+              className="w-full border border-blue-500 bg-white border-2 rounded-lg py-2 px-4 mb-4 mr-2 focus:outline-none focus:border-blue-500"
             />
             <input
               type="text"
               placeholder="Search by hospital name"
               value={hospitalSearchQuery}
               onChange={(e) => handleHospitalSearch(e.target.value)} // Handle hospital name search
-              className="w-full border border-gray-300 rounded-lg py-2 px-4 mb-4 mr-2 focus:outline-none focus:border-blue-500"
+              className="w-full border border-blue-500 bg-white border-2 rounded-lg py-2 px-4 mb-4 mr-2 focus:outline-none focus:border-blue-500"
             />
             <select
               value={selectedSpecialization}
               onChange={handleSpecializationChange}
-              className="border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:border-blue-500"
+              className="border border-blue-500 bg-white border-2 rounded-lg py-2 px-4 focus:outline-none focus:border-blue-500"
             >
               <option value="">All Specializations</option>
               {specializations.map((specialization, index) => (
@@ -183,12 +183,12 @@ const Appointments = () => {
           <table className="table-fixed w-full">
             <thead>
               <tr className="bg-blue-200">
-                <th className="w-1/8 py-2 px-4 font-bold">Select</th>
-                <th className="w-1/8 py-2 px-4 font-bold">Doctor Name</th>
-                <th className="w-1/8 py-2 px-4 font-bold">Specialization</th>
-                <th className="w-1/4 py-2 px-4 font-bold">Available Consultation Time</th>
-                <th className="w-1/8 py-2 px-4 font-bold">Hospital Name</th>
-                <th className="w-1/4 py-2 px-4 font-bold">Address</th>
+                <th className="w-1/8 py-2 px-4 text-black font-bold">Select</th>
+                <th className="w-1/8 py-2 px-4 text-black font-bold">Doctor Name</th>
+                <th className="w-1/8 py-2 px-4 text-black font-bold">Specialization</th>
+                <th className="w-1/4 py-2 px-4 text-black font-bold">Available Consultation Time</th>
+                <th className="w-1/8 py-2 px-4 text-black font-bold">Hospital Name</th>
+                <th className="w-1/8 py-2 px-4 text-black font-bold">Address</th>
               </tr>
             </thead>
             <tbody>
@@ -220,7 +220,9 @@ const Appointments = () => {
               renderInput={(params) => <TextField {...params} className="customDateTimePickerInput" />}            />
           </LocalizationProvider>
           <div style={{ marginBottom: '20px' }} />
-          <button onClick={() => { handleBookAppointment(); handlePrintDate(); }} className="bg-blue-500 text-white font-bold py-2 px-4 rounded mt-4">Book Appointment</button> {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
+          <button onClick={() => { handleBookAppointment(); handlePrintDate(); }} 
+          className="font-bold py-2 px-4 rounded text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500 mt-4">Book Appointment
+          </button> {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
 
         </div>
       </div>

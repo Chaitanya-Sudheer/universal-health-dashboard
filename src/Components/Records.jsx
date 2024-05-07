@@ -12,50 +12,34 @@ const Records = () => {
     {
       id: 1,
       title: "TREATMENT HISTORY",
-      onClick: () => navigate("/dashboard/treatment_history"),
+      onClick: () => navigate("/dashboard/patient/treatment_history"),
     },
     {
       id: 2,
       title: "MEDICAL DIRECTIVES",
-      onClick: () => navigate("/dashboard/medical_directives"),
+      onClick: () => navigate("/dashboard/patient/medical_directives"),
     },
     {
       id: 3,
       title: "VACCINATION HISTORY",
-      onClick: () => navigate("/dashboard/vaccination_history"),
+      onClick: () => navigate("/dashboard/patient/vaccination_history"),
     },
     {
       id: 4,
       title: "ALLERGIES",
-      onClick: () => navigate("/dashboard/allergies"),
+      onClick: () => navigate("/dashboard/patient/allergies"),
     },
     {
       id: 5,
       title: "FAMILY MEDICAL HISTORY",
-      onClick: () => navigate("/dashboard/fam_med_history"),
+      onClick: () => navigate("/dashboard/patient/fam_med_history"),
     },
     {
       id: 6,
       title: "SOCIAL HISTORY",
-      onClick: () => navigate("/dashboard/social_history"),
+      onClick: () => navigate("/dashboard/patient/social_history"),
     },
-    {
-      id: 7,
-      title: "REVIEW OF SYSTEMS",
-      //description: "  ",
-    },
-
-    {
-      id: 8,
-      title: "PHYSICAL EXAMINATIONS",
-      //description: " ",
-    },
-
-    {
-      id: 8,
-      title: "OTHERS",
-      //description: " ",
-    },
+   
   ];
 
   return (

@@ -1,11 +1,9 @@
-// Sidemenu.jsx
 import React from "react";
 import { FiActivity } from "react-icons/fi";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { RxAvatar } from "react-icons/rx";
 import { GiOpenFolder } from "react-icons/gi";
 import { FaFilePrescription } from "react-icons/fa";
-import { RiMedicineBottleLine } from "react-icons/ri";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
@@ -23,27 +21,23 @@ const Sidemenu = () => {
   }
 
   function handleClick2() {
-    navigate("/dashboard/patient/");
+    navigate("/dashboard/");
   }
 
   function handleClick3() {
-    navigate("/dashboard/patient/profile");
+    navigate("/dashboard/doctor");
   }
 
   function handleClick4() {
-    navigate("/dashboard/patient/prescription");
+    navigate("/dashboard/doctor/patients");
   }
 
   function handleClick5() {
-    navigate("/dashboard/patient/records");
+    navigate("/dashboard/doctor/prescriptions");
   }
 
-  function handleClick6() {
-    navigate("/dashboard/patient/medicines");
-  }
-
-  function handleClick7() {
-    navigate("/dashboard/patient/appointments");
+ function handleClick6() {
+    navigate("/dashboard/doctor/appointments");
   }
 
   return (
@@ -60,8 +54,8 @@ const Sidemenu = () => {
           className="h-[100px] w-[100px] border-black-200 border-[4px] object-cover rounded-full"
           alt="Profile Avatar"
         />
-        <span className="opacity-100 mt-2 text-black-400">User</span>
-        <h3 className="font-bold text-textColor">User</h3>
+        <span className="opacity-100 mt-2 text-black-400">Doctor</span>
+        <h3 className="font-bold text-textColor">Doctor</h3>
       </div>
 
       <div className="m-auto grid justify-center mt-4">
@@ -83,31 +77,23 @@ const Sidemenu = () => {
 
         <li
           className="flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center"
-          onClick={handleClick5}
+          onClick={handleClick4}
         >
           <GiOpenFolder className="text-black" />
-          <span className="text-black">Records</span>
+          <span className="text-black">Patients</span>
         </li>
 
         <li
           className="flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center"
-          onClick={handleClick4}
+          onClick={handleClick5}
         >
           <FaFilePrescription className="text-black" />
-          <span className="text-black">Prescription</span>
+          <span className="text-black">Prescriptions</span>
         </li>
 
         <li
           className="flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center"
           onClick={handleClick6}
-        >
-          <RiMedicineBottleLine className="text-black" />
-          <span className="text-black">Medicines</span>
-        </li>
-
-        <li
-          className="flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center"
-          onClick={handleClick7}
         >
           <FaRegCalendarAlt className="text-black" />
           <span className="text-black">Appointments</span>
@@ -120,6 +106,9 @@ const Sidemenu = () => {
           <CiLogout className="text-black" />
           <span className="text-black">Logout</span>
         </li>
+
+
+          
       </div>
     </div>
   );

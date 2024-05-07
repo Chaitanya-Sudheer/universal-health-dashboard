@@ -29,7 +29,7 @@ const App = () => {
           path="/dashboard/doctor/*"
           element={
             <ProtectedRoute>
-              <Dashboard2/>
+              <Dashboard2 />
             </ProtectedRoute>
           }
         />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Sidemenu2 from './Components/Doctor/Sidemenu2'
-import Dnav from './Dnav';
+import Sidemenu2 from './Sidemenu2'
+import Dnav from '../Dnav';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 

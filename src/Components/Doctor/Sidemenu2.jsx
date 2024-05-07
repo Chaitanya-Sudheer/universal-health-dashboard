@@ -33,16 +33,16 @@ const Sidemenu = () => {
   }
 
   function handleClick5() {
-    navigate("/dashboard/doctor/prescriptions2");
+    navigate("/dashboard/doctor/prescriptions");
   }
 
- function handleClick6() {
-    navigate("/dashboard/doctor/appointments2");
+  function handleClick6() {
+    navigate("/dashboard/doctor/appointments");
   }
 
   return (
     <div className="Sidemenu p-10 bg-gradient-to-r from-[#AECCFE] from-3% via-white via-45% to-blue-100 to-96% text-black rounded-md">
-    <div className='logo mt-4 gap-2 text-[black] flex items-center justify-center m-auto'>
+      <div className="logo mt-4 gap-2 text-[black] flex items-center justify-center m-auto">
         <FiActivity className="text-[30px]" />
         <h1 className="text-[40px] align-center justify-center font-black ">
           UNIMED
@@ -106,9 +106,6 @@ const Sidemenu = () => {
           <CiLogout className="text-black" />
           <span className="text-black">Logout</span>
         </li>
-
-
-          
       </div>
     </div>
   );

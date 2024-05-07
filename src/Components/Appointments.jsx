@@ -221,7 +221,7 @@ const Appointments = () => {
           </LocalizationProvider>
           <div style={{ marginBottom: '20px' }} />
           <button onClick={() => { handleBookAppointment(); handlePrintDate(); }} 
-          className="font-bold py-2 px-4 rounded text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500 mt-4">Book Appointment and Print Date/Time
+          className="font-bold py-2 px-4 rounded text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500 mt-4">Book Appointment
           </button> {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>}
 
         </div>

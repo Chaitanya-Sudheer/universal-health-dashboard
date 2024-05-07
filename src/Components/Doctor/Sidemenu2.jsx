@@ -25,19 +25,19 @@ const Sidemenu = () => {
   }
 
   function handleClick3() {
-    navigate("/dashboard/profile");
+    navigate("/dashboard/doctor");
   }
 
   function handleClick4() {
-    navigate("/dashboard/patients");
+    navigate("/dashboard/doctor/patients");
   }
 
   function handleClick5() {
-    navigate("/dashboard/prescriptions");
+    navigate("/dashboard/doctor/prescriptions");
   }
 
  function handleClick6() {
-    navigate("/dashboard/appointments");
+    navigate("/dashboard/doctor/appointments");
   }
 
   return (

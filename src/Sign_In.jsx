@@ -16,7 +16,7 @@ const Sign_In = () => {
   }
 
   function handleClick2() {
-    navigate("/Dashboard/patient"); // Navigates to the /home route
+    navigate("/dashboard/patient"); // Navigates to the /home route
   }
 
   const handleSubmit = async (event) => {
@@ -31,7 +31,11 @@ const Sign_In = () => {
 
     const api = import.meta.env.VITE_BACKEND;
     console.log(api);
-    const response = await fetch(`${api}/users`, {
+
+    // Determine the API endpoint based on userType
+    const endpoint = userType === "patient" ? "/users" : "/doctors";
+
+    const response = await fetch(`${api}${endpoint}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -165,7 +169,6 @@ const Sign_In = () => {
                   </a>
                 </label>
               </div>
-
 
               {/* Do not redirect to dashboard, form does not get validated */}
               <div className="form-control mt-6">

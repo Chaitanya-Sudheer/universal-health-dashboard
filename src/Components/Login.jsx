@@ -42,7 +42,7 @@ const Login = () => {
       const { token, expiry } = response.data.authentication_token;
       localStorage.setItem("authToken", token);
       localStorage.setItem("authTokenExpiry", expiry);
-      navigate("/Dashboard/patient");
+      navigate("/dashboard/patient");
     } catch (error) {
       console.error("Authentication failed:", error);
       setLoginError(true);

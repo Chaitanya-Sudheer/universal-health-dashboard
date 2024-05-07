@@ -3,45 +3,27 @@ import Sidemenu from './Sidemenu2'
 import Dnav from '../Dnav'
 
 const Patients = () => {
-    const patientsData = [
-        {
-          patientid: 11,
-          patientname: "John Doe",
-          gender: "Male",
-          phonenumber: 555-1234,
-          age: 65,
-          reasonforvisit: Heartache ,
-          email: "john@example.com",
-        },
-        {
-            patientid: 12,
-            patientname: "Jane Smith",
-            gender: "Female",
-            phonenumber: 555-5678,
-            age: 45,
-            reasonforvisit: "migraine",
-            email: "jane@example.com",
-        },
-        {
-            patientid: 13,
-            patientname: "Patient3 User",
-            gender: "Male",
-            phonenumber: 555-2468,
-            age: 30,
-            reasonforvisit: "fatigue",
-            email: "patient3@example.com",
-        },
-        {
-            patientid: 14,
-            patientname: "Patient4 User",
-            gender: "Male",
-            phonenumber: 555-9876,
-            age: 45,
-            reasonforvisit: "muscle weakness",
-            email: "patient4@example.com",
-        },
-        
-      ];
+  const patientsData = [
+    {
+        patientid: 11,
+        patientname: "John Doe",
+        gender: "Male",
+        phonenumber: "555-1234",
+        age: 65,
+        reasonforvisit: "Heartache",
+        email: "john@example.com",
+    },
+    {
+        patientid: 12,
+        patientname: "Jane Smith",
+        gender: "Female",
+        phonenumber: "555-5678",
+        age: 45,
+        reasonforvisit: "migraine",
+        email: "jane@example.com",
+    },
+    // Add more patient data as needed
+];
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
     <div className="flex flex-col md:flex-row">

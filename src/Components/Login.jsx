@@ -6,6 +6,10 @@ import axiosInstance from "../Auth";
 
 const Login = () => {
   let navigate = useNavigate();
+  function handleClick() {
+    navigate('/dashboard/doctor/');
+}
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState(false);
@@ -23,7 +27,7 @@ const Login = () => {
       const { token, expiry } = response.data.authentication_token;
       localStorage.setItem("authToken", token);
       localStorage.setItem("authTokenExpiry", expiry);
-      navigate("/Dashboard");
+      navigate("/Dashboard/patient");
     } catch (error) {
       console.error("Authentication failed:", error);
       setLoginError(true);
@@ -81,9 +85,19 @@ const Login = () => {
                 <button
                   type="submit"
                   className="btn text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500"
-                >
-                  LOGIN
+            >
+                  LOGIN AS PATIENT
                 </button>
+                <div className="text-black py-4 text-4xl">
+          <p>    </p>
+        </div>
+                <button 
+                  onClick={handleClick}
+                  type="submit"
+                  className=" btn text-white bg-blue-400 border-blue-400 hover:border-blue-500 hover:bg-blue-500" >
+                  LOGIN AS DOCTOR
+                </button>
+
               </div>
             </form>
           </div>

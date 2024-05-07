@@ -14,6 +14,7 @@ import Vaccination_history from './Components/Vaccination_history';
 import Allergies from './Components/Allergies';
 import Fam_Med_History from './Components/Fam_Med_History';
 import Social_history from './Components/Social_history';
+import Order from "./Components/Order";
 
 const Dashboard = () => {
  let navigate = useNavigate();
@@ -38,6 +39,7 @@ const Dashboard = () => {
           <Route path="allergies" element={<Allergies />} />
           <Route path="fam_med_history" element={<Fam_Med_History />} />
           <Route path="social_history" element={<Social_history />} />
+          <Route path="Order_medicines" element={<Order />}/>
           {/* Add other sub-routes as needed */}
         </Routes>
       </div>

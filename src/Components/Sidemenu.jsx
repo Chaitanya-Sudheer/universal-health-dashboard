@@ -45,6 +45,9 @@ const Sidemenu = () => {
   function handleClick7() {
     navigate("/dashboard/patient/appointments");
   }
+  function handleClick8() {
+    navigate("/dashboard/patient/order_medicines");
+  }
 
   return (
     <div className="Sidemenu p-10 bg-gradient-to-r from-[#AECCFE] from-3% via-white via-45% to-blue-100 to-96% text-black rounded-md">
@@ -111,6 +114,14 @@ const Sidemenu = () => {
         >
           <FaRegCalendarAlt className="text-black" />
           <span className="text-black">Appointments</span>
+        </li>
+
+        <li
+          className="flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center"
+          onClick={handleClick8}
+        >
+          <FaRegCalendarAlt className="text-black" />
+          <span className="text-black">Order Medicines</span>
         </li>
 
         <li

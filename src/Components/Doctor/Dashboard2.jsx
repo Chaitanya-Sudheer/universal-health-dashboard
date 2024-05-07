@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Profile2 from './Profile2';
 import Prescriptions2 from './Prescriptions2';
 import Appointments2 from './Appointments2';
+import Patients from './Patients';
 
 const Dashboard2 = () => {
     let navigate = useNavigate();
@@ -21,6 +22,7 @@ const Dashboard2 = () => {
              <Route path="profile2" element={<Profile2 />} />
              <Route path="prescription2" element={<Prescriptions2 />} />
              <Route path="appointments2" element={<Appointments2/>} />
+             <Route path="patients" element={<Patients/>} />
              {/* Add other sub-routes as needed */}
            </Routes>
          </div>

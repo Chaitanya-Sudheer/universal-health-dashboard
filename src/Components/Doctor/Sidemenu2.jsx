@@ -36,7 +36,7 @@ const Sidemenu = () => {
     navigate("/dashboard/prescriptions");
   }
 
- function handleClick7() {
+ function handleClick6() {
     navigate("/dashboard/appointments");
   }
 
@@ -77,7 +77,7 @@ const Sidemenu = () => {
 
         <li
           className="flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center"
-          onClick={handleClick5}
+          onClick={handleClick4}
         >
           <GiOpenFolder className="text-black" />
           <span className="text-black">Patients</span>
@@ -85,7 +85,7 @@ const Sidemenu = () => {
 
         <li
           className="flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center"
-          onClick={handleClick4}
+          onClick={handleClick5}
         >
           <FaFilePrescription className="text-black" />
           <span className="text-black">Prescriptions</span>
@@ -101,7 +101,7 @@ const Sidemenu = () => {
 
         <li
           className="flex pt-3 pb-3 pl-3 gap-2 hover:opacity-100 items-center"
-          onClick={handleClick7}
+          onClick={handleLogout}
         >
           <CiLogout className="text-black" />
           <span className="text-black">Logout</span>

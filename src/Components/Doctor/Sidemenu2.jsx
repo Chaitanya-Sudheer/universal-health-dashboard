@@ -33,11 +33,11 @@ const Sidemenu = () => {
   }
 
   function handleClick5() {
-    navigate("/dashboard/doctor/prescriptions");
+    navigate("/dashboard/doctor/prescriptions2");
   }
 
  function handleClick6() {
-    navigate("/dashboard/doctor/appointments");
+    navigate("/dashboard/doctor/appointments2");
   }
 
   return (
